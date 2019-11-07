@@ -1,0 +1,2 @@
+# cat=Options; type=boolean; label=Clear Frontend Cache after Panel or Group Changes
+clearCache = 1

@@ -1,0 +1,40 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+
+	<f:section name="content">
+		<h3><f:translate key="tx_omcookiemanager.fe.info.header" /></h3>
+		<div class="om-cookie-info">
+			<table>
+				<thead>
+				<tr>
+					<th><f:translate key="tx_omcookiemanager.fe.info.name" /></th>
+					<th><f:translate key="tx_omcookiemanager.fe.info.description" /></th>
+					<th><f:translate key="tx_omcookiemanager.fe.info.lifetime" /></th>
+					<th><f:translate key="tx_omcookiemanager.fe.info.provider" /></th>
+				</tr>
+				</thead>
+				<f:for as="cookiegroup" each="{cookieGroups}">
+					<tr>
+						<td style="text-align: center" colspan="4">
+							<f:translate key="tx_omcookiemanager.fe.info.group" />: <strong>{cookiegroup.name}</strong>
+							<f:if condition="{cookiegroup.description}">
+								<f:format.html>{cookiegroup.description}</f:format.html>
+							</f:if>
+						</td>
+					</tr>
+					<f:if condition="{cookiegroup.cookies}">
+						<f:for each="{cookiegroup.cookies}" as="cookie">
+							<tr>
+								<td> {cookie.name}</td>
+								<td> <f:format.html>{cookie.description}</f:format.html></td>
+								<td> {cookie.lifetime}</td>
+								<td> {cookie.provider }</td>
+							</tr>
+						</f:for>
+					</f:if>
+				</f:for>
+			</table>
+		</div>
+		<div style="text-decoration: underline; display: inline-block; margin-top: 15px" data-omcookie-panel-show><strong><f:translate key="tx_omcookiemanager.fe.info.settings-open" /></strong></div>
+	</f:section>
+</html>

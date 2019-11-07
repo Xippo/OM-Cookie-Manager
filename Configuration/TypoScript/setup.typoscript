@@ -1,0 +1,37 @@
+
+plugin.tx_omcookiemanager_main {
+    view {
+        templateRootPaths.0 = EXT:om_cookie_manager/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_omcookiemanager_main.view.templateRootPath}
+        partialRootPaths.0 = EXT:om_cookie_manager/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_omcookiemanager_main.view.partialRootPath}
+        layoutRootPaths.0 = EXT:om_cookie_manager/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_omcookiemanager_main.view.layoutRootPath}
+    }
+    settings {
+        css = {$plugin.tx_omcookiemanager_main.settings.cssFile}
+        js = {$plugin.tx_omcookiemanager_main.settings.jsFile}
+    }
+    persistence {
+        storagePid = {$plugin.tx_omcookiemanager_main.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+        # Should be on by default, but can be disabled if all action in the plugin are uncached
+        requireCHashArgumentForActionArguments = 1
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+//add Extbase plugin to the default page
+page.1572349671 < tt_content.list.20.omcookiemanager_main
+page.1572349671.switchableControllerActions {
+    CookiePanel {
+        1 = show
+    }
+}
+

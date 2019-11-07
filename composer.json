@@ -1,0 +1,28 @@
+{
+    "name": "om/om-cookie-manager",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Oliver Pfaff",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "OM\\OmCookieManager\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OM\\OmCookieManager\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "om/om-cookie-consent": "self.version",
+        "typo3-ter/om-cookie-consent": "self.version"
+    }
+}

@@ -1,0 +1,21 @@
+# customcategory=plugin.tx_omcookiemanager_main=OM Cookie Consent
+plugin.tx_omcookiemanager_main {
+    view {
+        # cat=plugin.tx_omcookiemanager_main/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:om_cookie_manager/Resources/Private/Templates/
+        # cat=plugin.tx_omcookiemanager_main/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:om_cookie_manager/Resources/Private/Partials/
+        # cat=plugin.tx_omcookiemanager_main/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:om_cookie_manager/Resources/Private/Layouts/
+    }
+    settings{
+        # cat=plugin.tx_omcookiemanager_main/file; type=string; label=Main CSS File
+        cssFile = EXT:om_cookie_manager/Resources/Public/Css/cookie_panel.css
+        # cat=plugin.tx_omcookiemanager_main/file; type=string; label=Main JS File
+        jsFile = EXT:om_cookie_manager/Resources/Public/Js/om_cookie_main.js
+    }
+    persistence {
+        # cat=plugin.tx_omcookiemanager_main//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

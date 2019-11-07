@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang_csh" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
+		<header/>
+		<body>
+			<trans-unit id="html.description" resname="html.description">
+				<source>html</source>
+			</trans-unit>
+			<trans-unit id="insert_place.description" resname="insert_place.description">
+				<source>insertPlace</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

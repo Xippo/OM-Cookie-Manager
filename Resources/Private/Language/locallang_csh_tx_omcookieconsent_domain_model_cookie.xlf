@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang_csh" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
+		<header/>
+		<body>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="lifetime.description" resname="lifetime.description">
+				<source>lifetime</source>
+			</trans-unit>
+			<trans-unit id="provider.description" resname="provider.description">
+				<source>provider</source>
+			</trans-unit>
+			<trans-unit id="cookie_group.description" resname="cookie_group.description">
+				<source>cookieGroup</source>
+			</trans-unit>
+			<trans-unit id="cookie_html.description" resname="cookie_html.description">
+				<source>cookieHtml</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de"  datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang_db" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
+		<header/>
+		<body>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie" resname="tx_omcookiemanager_domain_model_cookie">
+				<source>Cookie</source>
+				<target>Cookie</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.name" resname="tx_omcookiemanager_domain_model_cookie.name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.description" resname="tx_omcookiemanager_domain_model_cookie.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.lifetime" resname="tx_omcookiemanager_domain_model_cookie.lifetime">
+				<source>Lifetime</source>
+				<target>Speicherdauer</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.provider" resname="tx_omcookiemanager_domain_model_cookie.provider">
+				<source>Provider</source>
+				<target>Provider</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.cookie_group" resname="tx_omcookiemanager_domain_model_cookie.cookie_group">
+				<source>Cookie Group</source>
+				<target>Cookie Gruppe</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.cookie_html" resname="tx_omcookiemanager_domain_model_cookie.cookie_html">
+				<source>Cookie Html</source>
+				<target>Cookie HTML</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup" resname="tx_omcookiemanager_domain_model_cookiegroup">
+				<source>Cookie Group</source>
+				<target>Cookie Gruppe</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.name" resname="tx_omcookiemanager_domain_model_cookiegroup.name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.description" resname="tx_omcookiemanager_domain_model_cookiegroup.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.essential" resname="tx_omcookiemanager_domain_model_cookiegroup.essential">
+				<source>Essential (the option will be shown as checked and greyed out. The scripts will be loaded always after the save)</source>
+				<target>Essentiell (Die Gruppe wird im Optin schon angewählt und ausgegraut angezeigt. Das HTML und die hinterlegten Script Tags werden nach dem Speichern immer hinzugefügt und ausgeführt)</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.cookies" resname="tx_omcookiemanager_domain_model_cookiegroup.cookies">
+				<source>Cookies</source>
+				<target>Cookies</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel" resname="tx_omcookiemanager_domain_model_cookiepanel">
+				<source>Cookie Panel</source>
+				<target>Cookie Panel</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.name" resname="tx_omcookiemanager_domain_model_cookiepanel.name">
+				<source>Name (the header of the cookie optin panel)</source>
+				<target>Titel (wird als überschrift vom optin panel verwendet)</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.description" resname="tx_omcookiemanager_domain_model_cookiepanel.description">
+				<source>Description (this is shown in the information table/view)</source>
+				<target>Beschreibung (wird in der Informationstabelle angezeigt)</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.link" resname="tx_omcookiemanager_domain_model_cookiepanel.link">
+				<source>Link to the cookie or privacy policy</source>
+				<target>Link zur Datenschutzseite oder Cookie policy (Der Link wird im Optin Panel zu Verfügung gestellt)</target>
+			</trans-unit>
+            <trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.groups" resname="tx_omcookiemanager_domain_model_cookiepanel.groups">
+                <source>Active groups and there ordering</source>
+                <target>Aktive Gruppen und deren Anordnung</target>
+            </trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml" resname="tx_omcookiemanager_domain_model_cookiehtml">
+				<source>Cookie HTML</source>
+				<target>Cookie HTML</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml.html" resname="tx_omcookiemanager_domain_model_cookiehtml.html">
+				<source>HTML</source>
+				<target>HTML (fügen Sie hier bitte ihre Script tags rein. Bitte kein JS ohne script tag verwenden)</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml.insert_place" resname="tx_omcookiemanager_domain_model_cookiehtml.insert_place">
+				<source>Insert in </source>
+				<target>Einfügen in</target>
+			</trans-unit>
+			<trans-unit id="tx_om_cookie_manager_main.name" resname="tx_om_cookie_manager_main.name">
+				<source>OM Cookie Manager - Information Table/View</source>
+				<target>OM Cookie Manager - Cookie Informationstabelle</target>
+			</trans-unit>
+			<trans-unit id="tx_om_cookie_manager_main.description" resname="tx_om_cookie_manager_main.description">
+				<source>This plugin generates a overview about all cookie groups and cookies with there descriptions (the data comes from the records). There is as well a link, that offers the possibility to open the Cookie Panel and modify settings</source>
+				<target>Dieses Plugin generiert eine Cookie Informationstabelle wo alle Gruppen und deren Cookies samt beschreibung gelistet werden. Die Daten werden aus den Datensätzen gelesen. Hier wird auch ein Link zu Verfügung gestellt der es ermöglicht den Optin panel wieder zu öffnen und Einstellungen zu verändern </target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_event_name" resname="tx_omcookiemanager_domain_model_cookiegroup.description">
+				<source>Google Tag Manager event name (this will be pushed in the dataLayer when the group is accepted in the optin)</source>
+				<target>Google Tag Manager event name (dieses Event wird in den dataLayer gepusht, wenn die Gruppe akzeptiert wurde. Kann im GTM somit als Trigger dienen)</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
