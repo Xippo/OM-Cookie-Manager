@@ -6,10 +6,13 @@ catch(err) {
     console.log('OM Cookie Manager: No Cookie Groups found! Maybe you have forgot to set the page id inside the constants of the extension')
 }
 
+
 document.addEventListener('DOMContentLoaded', function(){
     var panelButtons = document.querySelectorAll('[data-omcookie-panel-save]');
     var openButtons = document.querySelectorAll('[data-omcookie-panel-show]');
     var i;
+    var omCookiePanel = document.querySelectorAll('[data-omcookie-panel]')[0];
+    if(omCookiePanel === undefined) return;
 
     //Enable stuff by Cookie
     var cookieConsentData = omCookieUtility.getCookie('omCookieConsent');
@@ -26,10 +29,11 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         //push stored events(sored by omCookieEnableCookieGrp) to gtm. We push this last so we are sure that gtm is loaded
         pushGtmEvents(omGtmEvents);
+        omTriggerPanelEvent(['cookieconsentscriptsloaded']);
     }else{
         //timeout, so the user can see the page before he get the nice cookie panel
         setTimeout(function () {
-            document.querySelectorAll('[data-omcookie-panel]')[0].classList.toggle('active');
+            omCookiePanel.classList.toggle('active');
         },1000)
     }
 
@@ -39,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
     for (i = 0; i < openButtons.length; i++) {
         openButtons[i].addEventListener('click', function () {
-            document.querySelectorAll('[data-omcookie-panel]')[0].classList.toggle('active');
+            omCookiePanel.classList.toggle('active');
         }, false);
     }
 
@@ -82,12 +86,21 @@ var omCookieSaveAction = function() {
     omCookieUtility.setCookie('omCookieConsent',cookie,364);
     //push stored events to gtm. We push this last so we are sure that gtm is loaded
     pushGtmEvents(omGtmEvents);
+    omTriggerPanelEvent(['cookieconsentsave','cookieconsentscriptsloaded']);
 
     setTimeout(function () {
         document.querySelectorAll('[data-omcookie-panel]')[0].classList.toggle('active');
     },350)
 
 };
+
+var omTriggerPanelEvent = function(events){
+  events.forEach(function (event) {
+      var eventObj = new CustomEvent(event, {bubbles: true});
+      document.querySelectorAll('[data-omcookie-panel]')[0].dispatchEvent(eventObj);
+  })
+};
+
 var pushGtmEvents = function (events) {
     window.dataLayer = window.dataLayer || [];
     events.forEach(function (event) {
@@ -151,4 +164,18 @@ var omCookieUtility = {
         },
     deleteCookie: function(name){ setCookie(name, '', -1); }
 };
+
+(function () {
+
+    if ( typeof window.CustomEvent === "function" ) return false;
+
+    function CustomEvent ( event, params ) {
+        params = params || { bubbles: false, cancelable: false, detail: null };
+        var evt = document.createEvent( 'CustomEvent' );
+        evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+        return evt;
+    }
+
+    window.CustomEvent = CustomEvent;
+})();
 
