@@ -9,6 +9,7 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - Optin Panel, which loads the scripts only after the optin confirmation
 - Google Tag Manager support.
 - Customizable, use your own CSS or change the Fluid templates
+- Custom javascript events that can be listen
 
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
