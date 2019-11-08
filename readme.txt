@@ -5,6 +5,7 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - Grouping of different Cookies alias Script tags
 - Multi-domain ready
 - Multi-language ready
+- Out of the box english and german frontend redering
 - Cookie Information Table plugin
 - Optin Panel, which loads the scripts only after the optin confirmation
 - Google Tag Manager support.
