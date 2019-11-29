@@ -84,7 +84,6 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             //render only the first
             /** @var CookiePanel $panel */
             $panel = $allPanels->getFirst();
-
             $groupIds = explode(',',$panel->getGroups());
             if(count($groupIds) > 0){
                 // @todo make some nice sql query in repo for this
@@ -99,7 +98,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
                     }
                 }
             }
-            if(count($cookieGroups) > 0){
+            if(is_array($cookieGroups) && count($cookieGroups) > 0){
                 $grpJson = \OM\OmCookieManager\Utility\JsBuilder::buildCompleteGrpJson($cookieGroups);
                 /** @var PageRenderer $pageRenderer */
                 $pageRenderer = $this->objectManager->get(PageRenderer::class);
