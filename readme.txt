@@ -1,4 +1,4 @@
-This is a TYPO3 Extension made by Olli machts from olli-machts.de .
+This is a TYPO3 Extension made by Oliver Pfaff from olli-machts.de .
 You will find a documentation under www.olli-machts.de/en/extension/cookie-manager and a small setup tutorial
 
 - HTML/Script tag management

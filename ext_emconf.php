@@ -2,8 +2,8 @@
 
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Cookie manager - Feats: Consent Panel (Optin), Grouping and Google Tag Manager support',
-    'description' => 'With this Extension you can manage the script/html tags that generates cookies on your site. You can Group them as you wish. The scripts will be loaded only after the Optin process is done',
+    'title' => 'Cookie manager - Consent Panel (Optin)',
+    'description' => 'Features: Consent Panel (Optin), Grouping and Google Tag Manager support. With this Extension you can manage the script/html tags that generates cookies on your site or simply build a consent panel. You can creat different groups like essential, tracking, preferences and so on. The associated scripts will be loaded only after the optin process is done',
     'category' => 'plugin',
     'author' => 'Oliver Pfaff',
     'author_email' => 'info@olli-machts.de',
