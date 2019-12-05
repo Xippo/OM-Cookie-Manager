@@ -1,4 +1,4 @@
-# customcategory=plugin.tx_omcookiemanager_main=OM Cookie Consent
+# customcategory=plugin.tx_omcookiemanager_main=OM Cookie Manager
 plugin.tx_omcookiemanager_main {
     view {
         # cat=plugin.tx_omcookiemanager_main/file; type=string; label=Path to template root (FE)
