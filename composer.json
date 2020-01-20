@@ -24,5 +24,6 @@
     "replace": {
         "om/om-cookie-consent": "self.version",
         "typo3-ter/om-cookie-consent": "self.version"
-    }
+    },
+    "license": "GPL-3.0-or-later"
 }
