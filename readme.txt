@@ -12,6 +12,12 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - Customizable, use your own CSS or change the Fluid templates
 - Custom javascript events that can be listen
 
+## Changelog
+**9.1.0**
+- Composer support
+- New Group awareness. If the panel finds a new group(with a new ID) he will show again.
+- Improved multi language support
+
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
