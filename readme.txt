@@ -15,7 +15,7 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 ## Changelog
 **9.1.0**
 - Composer support
-- New Group awareness. If the panel finds a new group(with a new ID) he will show again.
+- New Group awareness. If the panel finds a new group(with a new ID) it will show up again.
 - Improved multi language support
 
 Icons used in the extension. Visible only in the backend.
