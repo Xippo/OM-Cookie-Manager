@@ -13,28 +13,44 @@ document.addEventListener('DOMContentLoaded', function(){
     var i;
     var omCookiePanel = document.querySelectorAll('[data-omcookie-panel]')[0];
     if(omCookiePanel === undefined) return;
+    var openCookiePanel = true;
 
     //Enable stuff by Cookie
     var cookieConsentData = omCookieUtility.getCookie('omCookieConsent');
     if(cookieConsentData !== null && cookieConsentData.length > 0){
+        //dont open the panel if we have the cookie
+        openCookiePanel = false;
         var checkboxes = document.querySelectorAll('[data-omcookie-panel-grp]');
-        var cookieConsentActiveGrps = cookieConsentData.split(',');
-        for(i = 0; i < cookieConsentActiveGrps.length; i++){
-            omCookieEnableCookieGrp(cookieConsentActiveGrps[i]);
+        var cookieConsentGrps = cookieConsentData.split(',');
+        var cookieConsentActiveGrps = '';
+
+        for(i = 0; i < cookieConsentGrps.length; i++){
+            if(cookieConsentGrps[i] !== 'dismiss'){
+                var grpSettings = cookieConsentGrps[i].split('.');
+                if(parseInt(grpSettings[1]) === 1){
+                    omCookieEnableCookieGrp(grpSettings[0]);
+                    cookieConsentActiveGrps += grpSettings[0] + ',';
+                }
+            }
         }
         for(i = 0; i < checkboxes.length; i++){
-            if(cookieConsentData.indexOf(checkboxes[i].value)  !== -1){
+            if(cookieConsentActiveGrps.indexOf(checkboxes[i].value)  !== -1){
                 checkboxes[i].checked = true;
+            }
+            //check if we have a new group
+            if(cookieConsentData.indexOf(checkboxes[i].value) === -1){
+                openCookiePanel = true;
             }
         }
         //push stored events(sored by omCookieEnableCookieGrp) to gtm. We push this last so we are sure that gtm is loaded
         pushGtmEvents(omGtmEvents);
         omTriggerPanelEvent(['cookieconsentscriptsloaded']);
-    }else{
+    }
+    if(openCookiePanel === true){
         //timeout, so the user can see the page before he get the nice cookie panel
         setTimeout(function () {
             omCookiePanel.classList.toggle('active');
-        },1000)
+        },1000);
     }
 
     //check for button click
@@ -59,7 +75,7 @@ var omCookieSaveAction = function() {
         case 'all':
             for (i = 0; i < checkboxes.length; i++) {
                 omCookieEnableCookieGrp(checkboxes[i].value);
-                cookie += checkboxes[i].value + ',';
+                cookie += checkboxes[i].value + '.1,';
                 checkboxes[i].checked = true;
             }
         break;
@@ -67,7 +83,9 @@ var omCookieSaveAction = function() {
             for (i = 0; i < checkboxes.length; i++) {
                 if(checkboxes[i].checked === true){
                     omCookieEnableCookieGrp(checkboxes[i].value);
-                    cookie += checkboxes[i].value + ',';
+                    cookie += checkboxes[i].value + '.1,';
+                }else{
+                    cookie += checkboxes[i].value + '.0,';
                 }
             }
         break;
@@ -75,14 +93,16 @@ var omCookieSaveAction = function() {
             for (i = 0; i < checkboxes.length; i++) {
                 if(checkboxes[i].getAttribute('data-omcookie-panel-essential') !== null){
                     omCookieEnableCookieGrp(checkboxes[i].value);
-                    cookie += checkboxes[i].value + ',';
+                    cookie += checkboxes[i].value + '.1,';
                 }else{
+                    cookie += checkboxes[i].value + '.0,';
                     checkboxes[i].checked = false;
                 }
             }
         break;
     }
-    cookie = cookie.slice(0, -1);
+    cookie += 'dismiss';
+    //cookie = cookie.slice(0, -1);
     omCookieUtility.setCookie('omCookieConsent',cookie,364);
     //push stored events to gtm. We push this last so we are sure that gtm is loaded
     pushGtmEvents(omGtmEvents);
