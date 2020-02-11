@@ -17,6 +17,9 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - Composer support
 - New Group awareness. If the panel finds a new group(with a new ID) it will show up again.
 - Improved multi language support
+**9.2.0**
+- Optional - TypoScript Constant processing inside the cookie HTML. It must be enabled inside the Extension Settings after that you should clear the system cache
+
 
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
