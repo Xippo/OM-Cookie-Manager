@@ -1,2 +1,4 @@
 # cat=Options; type=boolean; label=Clear Frontend Cache after Panel or Group Changes
 clearCache = 1
+# cat=Options; type=boolean; label=Replace/Fetch TypoScript constants inside the the cookie html
+injectTsConstants = 0

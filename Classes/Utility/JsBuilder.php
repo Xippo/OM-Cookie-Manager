@@ -16,9 +16,8 @@ namespace OM\OmCookieManager\Utility;
 use OM\OmCookieManager\Domain\Model\Cookie;
 use OM\OmCookieManager\Domain\Model\CookieGroup;
 use OM\OmCookieManager\Domain\Model\CookieHtml;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\Query\Restriction\QueryRestrictionInterface;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class JsBuilder
 {
@@ -28,6 +27,16 @@ class JsBuilder
     public static function buildCompleteGrpJson($groups)
     {
         $grpArray = [];
+        if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()) < 9005000){
+            $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['om_cookie_manager']);
+            $fetchTsConstants = $extensionConfiguration['injectTsConstants'];
+        }else{
+            $fetchTsConstants = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)
+                ->get('om_cookie_manager', 'injectTsConstants');
+        }
+        if((int)$fetchTsConstants === 1){
+            $GLOBALS['TSFE']->tmpl->generateConfig();
+        }
         /** @var CookieGroup $group */
         foreach ($groups as $group){
             if (is_object($group->getCookies()) || $group->getCookies()->count() > 0){
@@ -37,7 +46,11 @@ class JsBuilder
                     if (is_object($cookie->getCookieHtml()) || $cookie->getCookieHtml()->count() > 0){
                         /** @var CookieHtml $html */
                         foreach ($cookie->getCookieHtml() as $html){
-                            $grpArray['group-' . $group->getUid()]['cookie-'.$cookie->getUid()][$html->getInsertPlace() === 0 ? 'header' : 'body'][] = $html->getHtml();
+                            $cookieHtmlCode = $html->getHtml();
+                            if((int)$fetchTsConstants === 1){
+                                $cookieHtmlCode = $GLOBALS['TSFE']->tmpl->substituteConstants($html->getHtml());
+                            }
+                            $grpArray['group-' . $group->getUid()]['cookie-'.$cookie->getUid()][$html->getInsertPlace() === 0 ? 'header' : 'body'][] = $cookieHtmlCode;
                         }
                     }
                 }
