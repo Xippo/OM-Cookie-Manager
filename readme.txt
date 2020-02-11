@@ -18,7 +18,7 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - New Group awareness. If the panel finds a new group(with a new ID) it will show up again.
 - Improved multi language support
 **9.2.0**
-- TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache
+- (Sponsored by Gesellschaft für Informatik - gi.de) TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache.
 
 
 Icons used in the extension. Visible only in the backend.
