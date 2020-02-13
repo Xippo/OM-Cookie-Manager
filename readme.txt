@@ -19,6 +19,8 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - Improved multi language support
 **9.2.0**
 - (Sponsored by Gesellschaft für Informatik - gi.de) TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache.
+**9.2.1**
+- Bugfix shortening details_nr for writelog method (thx to bashte and Sebastian Richter)
 
 
 Icons used in the extension. Visible only in the backend.
