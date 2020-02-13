@@ -46,7 +46,7 @@ class ProcessDatamapClass
             /** @var CacheManager $cacheManager */
             $cacheManager = GeneralUtility::makeInstance(CacheManager::class);
             $cacheManager->flushCachesInGroup('pages');
-            $GLOBALS['BE_USER']->writelog(4,0,0,1572862456,'Frontend Cache Clear by saving Om Cookie Panel or Group(OM Cookie manager)',[]);
+            $GLOBALS['BE_USER']->writelog(4,0,0,15728,'Frontend Cache Clear by saving Om Cookie Panel or Group(OM Cookie manager)',[]);
         }
     }
 }
