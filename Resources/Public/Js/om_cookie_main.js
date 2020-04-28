@@ -70,7 +70,18 @@ var omCookieSaveAction = function() {
     action = this.getAttribute('data-omcookie-panel-save');
     var checkboxes = document.querySelectorAll('[data-omcookie-panel-grp]');
     var i;
-    var cookie = '';
+    //check if we have a cookie
+    var cookie = omCookieUtility.getCookie('omCookieConsent');
+    if(cookie === null || cookie.length <= 0){
+        //set cookie to empty string when no cookie data was found
+        cookie = '';
+    }else{
+        //reset all values inside the cookie which are present in the actual panel
+        for (i = 0; i < checkboxes.length; i++) {
+            cookie = cookie.replace(new RegExp(checkboxes[i].value + '\\S{3}'),'');
+        }
+    }
+    //save the group id (group-x) and the made choice (.0 for group denied and .1 for group accepted)
     switch (action) {
         case 'all':
             for (i = 0; i < checkboxes.length; i++) {
@@ -101,6 +112,8 @@ var omCookieSaveAction = function() {
             }
         break;
     }
+    //replace dismiss to the end of the cookie
+    cookie = cookie.replace('dismiss','');
     cookie += 'dismiss';
     //cookie = cookie.slice(0, -1);
     omCookieUtility.setCookie('omCookieConsent',cookie,364);
