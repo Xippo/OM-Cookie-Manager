@@ -21,6 +21,9 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - (Sponsored by Gesellschaft für Informatik - gi.de) TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache.
 **9.2.1**
 - Bugfix shortening details_nr for writelog method (thx to bashte and Sebastian Richter)
+**10.0.0**
+- Add TYPO3 10 support
+- Improved remember abilities between languages. Know also if your groups are not linked (over the field Transl.Orig) inside the TYPO3 backend, the extension will remember all active groups and not show the panel on every language switch on the frontend side.
 
 
 Icons used in the extension. Visible only in the backend.
