@@ -60,14 +60,21 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
         $pageRenderer = $this->objectManager->get(PageRenderer::class);
         //compatibility < 8
         if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()) < 8007000){
-            $jsPath = rtrim(PathUtility::getRelativePathTo(GeneralUtility::getFileAbsFileName($this->settings['js'])), '/');
-            $pageRenderer->addJsFooterFile($jsPath);
-            $cssPath = rtrim(PathUtility::getRelativePathTo(GeneralUtility::getFileAbsFileName($this->settings['css'])), '/');
-            $pageRenderer->addCssFile($cssPath);
-
+            if(empty($this->settings['js']) === false){
+                $jsPath = rtrim(PathUtility::getRelativePathTo(GeneralUtility::getFileAbsFileName($this->settings['js'])), '/');
+                $pageRenderer->addJsFooterFile($jsPath);
+            }
+            if(empty($this->settings['css']) === false){
+                $cssPath = rtrim(PathUtility::getRelativePathTo(GeneralUtility::getFileAbsFileName($this->settings['css'])), '/');
+                $pageRenderer->addCssFile($cssPath);
+            }
         }else{
-            $pageRenderer->addJsFooterFile($this->settings['js']);
-            $pageRenderer->addCssFile($this->settings['css']);
+            if(empty($this->settings['js']) === false){
+                $pageRenderer->addJsFooterFile($this->settings['js']);
+            }
+            if(empty($this->settings['css']) === false) {
+                $pageRenderer->addCssFile($this->settings['css']);
+            }
         }
     }
 
