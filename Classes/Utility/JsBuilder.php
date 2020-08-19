@@ -21,6 +21,8 @@ use TYPO3\CMS\Core\Database\Query\Restriction\QueryRestrictionInterface;
 
 class JsBuilder
 {
+    private static $flatSetup = [];
+
     /**
      * @param $groups array|QueryRestrictionInterface
      */
@@ -36,6 +38,7 @@ class JsBuilder
         }
         if((int)$fetchTsConstants === 1){
             $GLOBALS['TSFE']->tmpl->generateConfig();
+            self::$flatSetup = $GLOBALS['TSFE']->tmpl->flatSetup;
         }
         /** @var CookieGroup $group */
         foreach ($groups as $group){
@@ -48,7 +51,7 @@ class JsBuilder
                         foreach ($cookie->getCookieHtml() as $html){
                             $cookieHtmlCode = $html->getHtml();
                             if((int)$fetchTsConstants === 1){
-                                $cookieHtmlCode = $GLOBALS['TSFE']->tmpl->substituteConstants($html->getHtml());
+                                $cookieHtmlCode = self::substituteConstants($html->getHtml());
                             }
                             $grpArray['group-' . $group->getUid()]['cookie-'.$cookie->getUid()][$html->getInsertPlace() === 0 ? 'header' : 'body'][] = $cookieHtmlCode;
                         }
@@ -57,5 +60,26 @@ class JsBuilder
             }
         }
         return json_encode($grpArray);
+    }
+
+    /**
+     * @param $subject
+     *
+     * @return string
+     */
+    private static function substituteConstants($subject)
+    {
+        for ($i = 0; $i < 10 && !$noChange; $i++) {
+            $oldSubject = $subject;
+            $subject = preg_replace_callback('/\\{\\$(.[^}]*)\\}/', function ($matches) {
+                $flatSetup = JsBuilder::$flatSetup;
+                // Replace {$CONST} if found in $this->flatSetup, else leave unchanged
+                return isset($flatSetup[$matches[1]]) && !is_array($flatSetup[$matches[1]]) ? $flatSetup[$matches[1]] : $matches[0];
+            }, $subject);
+            if ($oldSubject == $subject) {
+                $noChange = true;
+            }
+        }
+        return $subject;
     }
 }
