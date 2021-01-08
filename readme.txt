@@ -26,6 +26,8 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - Improved remember abilities between languages. Know also if your groups are not linked (over the field Transl.Orig) inside the TYPO3 backend, the extension will remember all active groups and not show the panel on every language switch on the frontend side.
 **10.0.1**
 - BUGFIX if no css or js file is set in the TypoScript Constants no empty file will be added to the page.
+**10.0.2**
+- [BUGFIX] Fix failing TS constants replacement in HTML. Thanks @maritwho(Sebastian Hofer)
 
 
 Icons used in the extension. Visible only in the backend.
