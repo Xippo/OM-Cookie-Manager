@@ -9,7 +9,7 @@ call_user_func(
             'OM.OmCookieManager',
             'Main',
             [
-                'CookiePanel' => 'info'
+                OM\OmCookieManager\Controller\CookiePanelController::class => 'info'
             ],
             // non-cacheable actions
             [
