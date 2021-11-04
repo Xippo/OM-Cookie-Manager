@@ -4,18 +4,31 @@ defined('TYPO3_MODE') || die('Access denied.');
 call_user_func(
     function()
     {
-
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'OM.OmCookieManager',
-            'Main',
-            [
-                OM\OmCookieManager\Controller\CookiePanelController::class => 'info'
-            ],
-            // non-cacheable actions
-            [
-                'Cookie' => '',
-            ]
-        );
+        if (\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()) < 10004000){
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+                'OM.OmCookieManager',
+                'Main',
+                [
+                    'CookiePanel' => 'info'
+                ],
+                // non-cacheable actions
+                [
+                    'Cookie' => '',
+                ]
+            );
+        } else {
+            \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+                'OM.OmCookieManager',
+                'Main',
+                [
+                    \OM\OmCookieManager\Controller\CookiePanelController::class => 'info'
+                ],
+                // non-cacheable actions
+                [
+                    'Cookie' => '',
+                ]
+            );
+        }
 
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
