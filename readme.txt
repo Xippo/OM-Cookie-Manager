@@ -1,6 +1,6 @@
 This is a TYPO3 Extension made by Oliver Pfaff from olli-machts.de .
 You will find a documentation under www.olli-machts.de/en/extension/cookie-manager and a small setup tutorial
-The Extension development is supported by Nerdost GmbH (nerdost.net)
+The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerdost.net)
 
 - HTML/Script tag management
 - Grouping of different Cookies alias Script tags
