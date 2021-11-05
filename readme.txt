@@ -1,5 +1,6 @@
 This is a TYPO3 Extension made by Oliver Pfaff from olli-machts.de .
 You will find a documentation under www.olli-machts.de/en/extension/cookie-manager and a small setup tutorial
+The Extension development is supported by Nerdost GmbH (nerdost.net)
 
 - HTML/Script tag management
 - Grouping of different Cookies alias Script tags
@@ -28,6 +29,9 @@ You will find a documentation under www.olli-machts.de/en/extension/cookie-manag
 - BUGFIX if no css or js file is set in the TypoScript Constants no empty file will be added to the page.
 **10.0.2**
 - [BUGFIX] Fix failing TS constants replacement in HTML. Thanks @maritwho(Sebastian Hofer)
+**11.0.0**
+- [TASK] TYPO3 11 compatibility (Thx Christoph Dolar)
+- [TASK] Improve default CSS for better OS and iOS experience
 
 
 Icons used in the extension. Visible only in the backend.
