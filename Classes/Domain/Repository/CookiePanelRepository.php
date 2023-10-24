@@ -21,8 +21,6 @@ class CookiePanelRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     public function initializeObject() {
         //set default translation behavior. So we hopefully avoid problems with different system settings
         $querySettings = $this->createQuery()->getQuerySettings();
-        $querySettings->setLanguageOverlayMode(false);
-        $querySettings->setLanguageMode('strict');
         $this->setDefaultQuerySettings($querySettings);
     }
 }
