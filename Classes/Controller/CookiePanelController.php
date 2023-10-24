@@ -57,31 +57,17 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     public function initializeShowAction()
     {
         /** @var PageRenderer $pageRenderer */
-        $pageRenderer = $this->objectManager->get(PageRenderer::class);
-        //compatibility < 8
-        if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()) < 8007000){
-            if(empty($this->settings['js']) === false){
-                $jsPath = rtrim(PathUtility::getRelativePathTo(GeneralUtility::getFileAbsFileName($this->settings['js'])), '/');
-                $pageRenderer->addJsFooterFile($jsPath);
-            }
-            if(empty($this->settings['css']) === false){
-                $cssPath = rtrim(PathUtility::getRelativePathTo(GeneralUtility::getFileAbsFileName($this->settings['css'])), '/');
-                $pageRenderer->addCssFile($cssPath);
-            }
-        }else{
-            if(empty($this->settings['js']) === false){
-                $pageRenderer->addJsFooterFile($this->settings['js']);
-            }
-            if(empty($this->settings['css']) === false) {
-                $pageRenderer->addCssFile($this->settings['css']);
-            }
+        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        if(empty($this->settings['js']) === false){
+            $pageRenderer->addJsFooterFile($this->settings['js']);
+        }
+        if(empty($this->settings['css']) === false) {
+            $pageRenderer->addCssFile($this->settings['css']);
         }
     }
 
     /**
-     * action show
-     *
-     * @return void
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function showAction()
     {
@@ -107,7 +93,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             if(is_array($cookieGroups) && count($cookieGroups) > 0){
                 $grpJson = \OM\OmCookieManager\Utility\JsBuilder::buildCompleteGrpJson($cookieGroups);
                 /** @var PageRenderer $pageRenderer */
-                $pageRenderer = $this->objectManager->get(PageRenderer::class);
+                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
                 $pageRenderer->addHeaderData('<script id="om-cookie-consent" type="application/json">'.$grpJson.'</script>');
             }
 
@@ -115,9 +101,12 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             $this->view->assign('cookieGroups',$cookieGroups);
 
         }
-
+        return $this->htmlResponse();
     }
 
+    /**
+     * @return \Psr\Http\Message\ResponseInterface
+     */
     public function infoAction()
     {
         $allPanels = $this->cookiePanelRepository->findAll();
@@ -137,5 +126,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             }
             $this->view->assign('cookieGroups',$cookieGroups);
         }
+
+        return $this->htmlResponse();
     }
 }

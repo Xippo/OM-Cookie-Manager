@@ -212,4 +212,24 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->cookieGroup = $cookieGroup;
     }
 
+
+	/**
+	 * lifetime
+	 *
+	 * @return string
+	 */
+	public function getLifetime() {
+		return $this->lifetime;
+	}
+
+	/**
+	 * lifetime
+	 *
+	 * @param string $lifetime lifetime
+	 * @return self
+	 */
+	public function setLifetime($lifetime): self {
+		$this->lifetime = $lifetime;
+		return $this;
+	}
 }
