@@ -8,8 +8,9 @@ defined('TYPO3') || die();
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
     ],
-    // non-cacheable actions
-    []
+    [
+        \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
+    ],
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -18,8 +19,7 @@ defined('TYPO3') || die();
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'info',
     ],
-    // non-cacheable actions
-    []
+    [],
 );
 
 // wizards
@@ -27,18 +27,9 @@ defined('TYPO3') || die();
     'mod {
         wizards.newContentElement.wizardItems.plugins {
             elements {
-                main {
-                    iconIdentifier = om_cookie_manager-plugin-main
-                    title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name
-                    description = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.description
-                    tt_content_defValues {
-                        CType = list
-                        list_type = omcookiemanager_main
-                    }
-                }
                 info {
                     iconIdentifier = om_cookie_manager-plugin-main
-                    title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name
+                    title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_info.name
                     description = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.description
                     tt_content_defValues {
                         CType = list

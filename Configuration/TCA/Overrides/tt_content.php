@@ -6,13 +6,8 @@ call_user_func(
     {
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'OmCookieManager',
-            'Main',
-            'OM Cookie Manager'
-        );
-        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'OmCookieManager',
             'Info',
-            'OM Cookie Manager - Info'
+            'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_info.name'
         );
     }
 );

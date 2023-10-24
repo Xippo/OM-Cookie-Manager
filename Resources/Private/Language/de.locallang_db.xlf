@@ -84,6 +84,10 @@
 				<target>Einfügen in</target>
 			</trans-unit>
 			<trans-unit id="tx_om_cookie_manager_main.name" resname="tx_om_cookie_manager_main.name">
+				<source>OM Cookie Manager - Main</source>
+				<target>OM Cookie Manager - Main</target>
+			</trans-unit>
+			<trans-unit id="tx_om_cookie_manager_info.name" resname="tx_om_cookie_manager_info.name">
 				<source>OM Cookie Manager - Information Table/View</source>
 				<target>OM Cookie Manager - Cookie Informationstabelle</target>
 			</trans-unit>
