@@ -28,7 +28,6 @@ class ProcessCmdmapClass
     public function processCmdmap_deleteAction($table, $id, $recordToDelete, $recordWasDeleted, DataHandler$datahandler)
     {
         if ($table === 'tx_omcookiemanager_domain_model_cookiepanel' || $table === 'tx_omcookiemanager_domain_model_cookiegroup') {
-            //compatibility
             $clearCacheOpt = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'clearCache');
             if((int)$clearCacheOpt === 1){
                 /** @var CacheManager $cacheManager */

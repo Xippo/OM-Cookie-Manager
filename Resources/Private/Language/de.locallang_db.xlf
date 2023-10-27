@@ -84,16 +84,16 @@
 				<target>Einfügen in</target>
 			</trans-unit>
 			<trans-unit id="tx_om_cookie_manager_main.name" resname="tx_om_cookie_manager_main.name">
-				<source>OM Cookie Manager - Main</source>
-				<target>OM Cookie Manager - Main</target>
-			</trans-unit>
-			<trans-unit id="tx_om_cookie_manager_info.name" resname="tx_om_cookie_manager_info.name">
 				<source>OM Cookie Manager - Information Table/View</source>
 				<target>OM Cookie Manager - Cookie Informationstabelle</target>
 			</trans-unit>
 			<trans-unit id="tx_om_cookie_manager_main.description" resname="tx_om_cookie_manager_main.description">
 				<source>This plugin generates a overview about all cookie groups and cookies with there descriptions (the data comes from the records). There is as well a link, that offers the possibility to open the Cookie Panel and modify settings</source>
 				<target>Dieses Plugin generiert eine Cookie Informationstabelle wo alle Gruppen und deren Cookies samt beschreibung gelistet werden. Die Daten werden aus den Datensätzen gelesen. Hier wird auch ein Link zu Verfügung gestellt der es ermöglicht den Optin panel wieder zu öffnen und Einstellungen zu verändern </target>
+			</trans-unit>
+			<trans-unit id="tx_om_cookie_manager_info.name" resname="tx_om_cookie_manager_info.name">
+				<source>OM Cookie Manager - Main</source>
+				<target>OM Cookie Manager - Main</target>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_event_name" resname="tx_omcookiemanager_domain_model_cookiegroup.description">
 				<source>Google Tag Manager event name (this will be pushed in the dataLayer when the group is accepted in the optin)</source>

@@ -69,6 +69,9 @@
 			<trans-unit id="tx_om_cookie_manager_main.description" resname="tx_om_cookie_manager_main.description">
 				<source>This plugin generates a overview about all cookie groups and cookies with there descriptions (the data comes from the records). There is as well a link, that offers the possibility to reopen the Cookie Panel and change the given Optins</source>
 			</trans-unit>
+			<trans-unit id="tx_om_cookie_manager_info.name" resname="tx_om_cookie_manager_info.name">
+				<source>OM Cookie Manager - Main</source>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_event_name" resname="tx_omcookiemanager_domain_model_cookiegroup.description">
 				<source>Google Tag Manager event name (this will be pushed in the dataLayer when the group is accepted in the optin)</source>
 			</trans-unit>
