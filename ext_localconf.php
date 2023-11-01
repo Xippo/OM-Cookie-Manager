@@ -10,7 +10,7 @@ defined('TYPO3') || die();
     ],
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
-    ],
+    ]
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -18,8 +18,7 @@ defined('TYPO3') || die();
     'Main',
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'info',
-    ],
-    [],
+    ]
 );
 
 // wizards
@@ -53,18 +52,3 @@ $iconRegistry->registerIcon(
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = \OM\OmCookieManager\Hook\ProcessDatamapClass::class;
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][] = \OM\OmCookieManager\Hook\ProcessCmdmapClass::class;
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_omcookiemanager_domain_model_cookie', 'EXT:om_cookie_manager/Resources/Private/Language/locallang_csh_tx_omcookiemanager_domain_model_cookie.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_omcookiemanager_domain_model_cookie');
-$GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookie']['ctrl']['security']['ignorePageTypeRestriction'] = true;
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_omcookiemanager_domain_model_cookiegroup', 'EXT:om_cookie_manager/Resources/Private/Language/locallang_csh_tx_omcookiemanager_domain_model_cookiegroup.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_omcookiemanager_domain_model_cookiegroup');
-$GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookiegroup']['ctrl']['security']['ignorePageTypeRestriction'] = true;
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_omcookiemanager_domain_model_cookiepanel', 'EXT:om_cookie_manager/Resources/Private/Language/locallang_csh_tx_omcookiemanager_domain_model_cookiepanel.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_omcookiemanager_domain_model_cookiepanel');
-$GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookiepanel']['ctrl']['security']['ignorePageTypeRestriction'] = true;
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_omcookiemanager_domain_model_cookiehtml', 'EXT:om_cookie_manager/Resources/Private/Language/locallang_csh_tx_omcookiemanager_domain_model_cookiehtml.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_omcookiemanager_domain_model_cookiehtml');
-$GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookiehtml']['ctrl']['security']['ignorePageTypeRestriction'] = true;
