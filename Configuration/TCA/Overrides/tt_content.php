@@ -1,8 +1,7 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'OM.OmCookieManager',
+    'OmCookieManager',
     'Main',
-    'OM Cookie Manager'
+    'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name'
 );

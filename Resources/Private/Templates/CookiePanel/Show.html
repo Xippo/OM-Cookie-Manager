@@ -8,7 +8,7 @@
 				<form>
 					<f:for as="cookiegroup" each="{cookieGroups}">
 						<div class="cookie-panel__checkbox-wrap">
-							<input class="cookie-panel__checkbox {f:if(condition:cookiegroup.essential,then:'cookie-panel__checkbox--state-inactiv',else:'')}" autocomplete="off" data-omcookie-panel-grp="1" id="group-{cookiegroup.uid}" type="checkbox" {f:if(condition:cookiegroup.essential,then:'checked=1 data-omcookie-panel-essential="1" disabled="disabled"',else:'')} value="group-{cookiegroup.uid}" />
+							<input class="cookie-panel__checkbox {f:if(condition:cookiegroup.essential,then:'cookie-panel__checkbox--state-inactiv',else:'')}" data-omcookie-panel-grp="1" id="group-{cookiegroup.uid}" type="checkbox" {f:if(condition:cookiegroup.essential,then:'checked data-omcookie-panel-essential="1" disabled="disabled"',else:'')} value="group-{cookiegroup.uid}" />
 							<label for="group-{cookiegroup.uid}">{cookiegroup.name}</label>
 						</div>
 					</f:for>

@@ -5,10 +5,7 @@ namespace OM\OmCookieManager\Hook;
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /***
  *
@@ -34,14 +31,7 @@ class ProcessDatamapClass
         if (isset($dataHandler->datamap['tx_omcookiemanager_domain_model_cookiepanel']) === false && isset($dataHandler->datamap['tx_omcookiemanager_domain_model_cookiegroup']) === false) {
             return;
         }
-        //compatibility
-        if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()) < 9005000){
-            $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['om_cookie_manager']);
-            $clearCacheOpt = $extensionConfiguration['clearCache'];
-        }else{
-            $clearCacheOpt = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)
-                ->get('om_cookie_manager', 'clearCache');
-        }
+        $clearCacheOpt = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'clearCache');
         if((int)$clearCacheOpt === 1){
             /** @var CacheManager $cacheManager */
             $cacheManager = GeneralUtility::makeInstance(CacheManager::class);

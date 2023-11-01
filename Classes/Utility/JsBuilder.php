@@ -29,13 +29,7 @@ class JsBuilder
     public static function buildCompleteGrpJson($groups)
     {
         $grpArray = [];
-        if(\TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(\TYPO3\CMS\Core\Utility\VersionNumberUtility::getCurrentTypo3Version()) < 9005000){
-            $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['om_cookie_manager']);
-            $fetchTsConstants = $extensionConfiguration['injectTsConstants'];
-        }else{
-            $fetchTsConstants = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)
-                ->get('om_cookie_manager', 'injectTsConstants');
-        }
+        $fetchTsConstants = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'injectTsConstants');
         if((int)$fetchTsConstants === 1){
             $GLOBALS['TSFE']->tmpl->generateConfig();
             self::$flatSetup = $GLOBALS['TSFE']->tmpl->flatSetup;

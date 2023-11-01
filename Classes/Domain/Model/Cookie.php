@@ -20,7 +20,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * name
-     * 
+     *
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
@@ -28,28 +28,28 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * description
-     * 
+     *
      * @var string
      */
     protected $description = '';
 
     /**
      * lifetime
-     * 
+     *
      * @var string
      */
     protected $lifetime = '';
 
     /**
      * provider
-     * 
+     *
      * @var string
      */
     protected $provider = '';
 
     /**
      * cookieGroup
-     * 
+     *
      * @var \OM\OmCookieManager\Domain\Model\CookieGroup
      */
     protected $cookieGroup = null;
@@ -130,7 +130,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the name
-     * 
+     *
      * @return string $name
      */
     public function getName()
@@ -140,7 +140,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the name
-     * 
+     *
      * @param string $name
      * @return void
      */
@@ -151,7 +151,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the description
-     * 
+     *
      * @return string $description
      */
     public function getDescription()
@@ -161,7 +161,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the description
-     * 
+     *
      * @param string $description
      * @return void
      */
@@ -171,29 +171,8 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the lifetime
-     * 
-     * @return string $lifetime
-     */
-    public function getLifetime()
-    {
-        return $this->lifetime;
-    }
-
-    /**
-     * Sets the lifetime
-     * 
-     * @param string $lifetime
-     * @return void
-     */
-    public function setLifetime($lifetime)
-    {
-        $this->lifetime = $lifetime;
-    }
-
-    /**
      * Returns the provider
-     * 
+     *
      * @return string $provider
      */
     public function getProvider()
@@ -203,7 +182,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the provider
-     * 
+     *
      * @param string $provider
      * @return void
      */
@@ -214,7 +193,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the cookieGroup
-     * 
+     *
      * @return \OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup
      */
     public function getCookieGroup()
@@ -224,7 +203,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the cookieGroup
-     * 
+     *
      * @param \OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup
      * @return void
      */
@@ -233,4 +212,24 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->cookieGroup = $cookieGroup;
     }
 
+
+	/**
+	 * lifetime
+	 *
+	 * @return string
+	 */
+	public function getLifetime() {
+		return $this->lifetime;
+	}
+
+	/**
+	 * lifetime
+	 *
+	 * @param string $lifetime lifetime
+	 * @return self
+	 */
+	public function setLifetime($lifetime): self {
+		$this->lifetime = $lifetime;
+		return $this;
+	}
 }
