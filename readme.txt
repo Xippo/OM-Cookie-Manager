@@ -11,13 +11,13 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - Optin Panel, which loads the scripts only after the optin confirmation
 - Google Tag Manager support.
 - Customizable, use your own CSS or change the Fluid templates
-- Custom javascript events that can be listen
+- Custom javascript events that can be lised
 
 ## Changelog
 **9.1.0**
 - Composer support
 - New Group awareness. If the panel finds a new group(with a new ID) it will show up again.
-- Improved multi language support
+- Improved multilanguage support
 **9.2.0**
 - (Sponsored by Gesellschaft für Informatik - gi.de) TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache.
 **9.2.1**
@@ -28,7 +28,7 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 **10.0.1**
 - BUGFIX if no css or js file is set in the TypoScript Constants no empty file will be added to the page.
 **10.0.2**
-- [BUGFIX] Fix failing TS constants replacement in HTML. Thanks @maritwho(Sebastian Hofer)
+- [BUGFIX] Fix failing TS constants replacement in HTML. Thanks, @maritwho(Sebastian Hofer)
 **11.0.0**
 - [TASK] TYPO3 11 compatibility (Thx Christoph Dolar)
 - [TASK] Improve default CSS for better OS and iOS experience
