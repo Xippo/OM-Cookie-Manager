@@ -33,6 +33,10 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [TASK] TYPO3 11 compatibility (Thx Christoph Dolar)
 - [TASK] Improve default CSS for better OS and iOS experience
 
+**11.0.1**
+- [BUGFIX] W3C HTML Validation
+- [TASK] TYPO3 12 Compatibility preparation (Thx Sebastian Richter and DerBasti)
+
 
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
