@@ -219,6 +219,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 * @return string
 	 */
 	public function getLifetime() {
+        // @extensionScannerIgnoreLine
 		return $this->lifetime;
 	}
 
@@ -229,6 +230,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 	 * @return self
 	 */
 	public function setLifetime($lifetime): self {
+        // @extensionScannerIgnoreLine
 		$this->lifetime = $lifetime;
 		return $this;
 	}
