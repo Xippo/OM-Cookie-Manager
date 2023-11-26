@@ -32,7 +32,12 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 **11.0.0**
 - [TASK] TYPO3 11 compatibility (Thx Christoph Dolar)
 - [TASK] Improve default CSS for better OS and iOS experience
-
+**11.0.1**
+- [BUGFIX] W3C HTML Validation
+- [TASK] TYPO3 12 Compatibility preparation (Thx Sebastian Richter and DerBasti)
+**12.0.0**
+- [TASK] Establish TYPO3 12 compatibility for typoscript constants swap
+- [BUGFIX] PHP Warning: Undefined variable and fix extension scanner false positives
 
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
