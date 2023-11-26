@@ -7,9 +7,6 @@ defined('TYPO3') || die();
     'Info',
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
-    ],
-    [
-        \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
     ]
 );
 
