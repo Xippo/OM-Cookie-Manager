@@ -66,6 +66,7 @@ class JsBuilder
      */
     private static function substituteConstants($subject)
     {
+        $noChange = false;
         for ($i = 0; $i < 10 && !$noChange; $i++) {
             $oldSubject = $subject;
             $subject = preg_replace_callback('/\\{\\$(.[^}]*)\\}/', function ($matches) {
