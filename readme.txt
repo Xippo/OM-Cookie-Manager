@@ -38,6 +38,7 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 **12.0.0**
 - [TASK] Establish TYPO3 12 compatibility for typoscript constants swap
 - [BUGFIX] PHP Warning: Undefined variable and fix extension scanner false positives
+- [TASK] TYPO3 12 compatibility
 
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
