@@ -13,8 +13,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Oliver Pfaff',
     'author_email' => 'info@olli-machts.de',
     'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 0,
     'version' => '12.0.0',
 ];
