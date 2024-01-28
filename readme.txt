@@ -40,7 +40,7 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [BUGFIX] PHP Warning: Undefined variable and fix extension scanner false positives
 - [TASK] TYPO3 12 compatibility
 **12.0.1**
-- [TASK] improved TYPO3 12 compatibility, removed obsolete configuration and replace outdated API (Thx Nikita)
+- [TASK] improve TYPO3 12 compatibility, remove obsolete configurations and replace outdated API calls (Thx Nikita)
 
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
