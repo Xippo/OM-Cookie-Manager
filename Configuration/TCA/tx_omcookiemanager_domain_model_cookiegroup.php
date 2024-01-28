@@ -19,9 +19,6 @@ return [
         'searchFields' => 'name,description',
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_grp.svg'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, gtm_event_name, description, essential, cookies',
-    ],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, gtm_event_name, description, essential, cookies'],
     ],
@@ -30,22 +27,11 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ]
-                ],
-                'default' => 0,
+                'type' => 'language'
             ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
@@ -158,7 +144,7 @@ return [
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    ['LLL:EXT:lang/locallang_core.xlf:labels.enabled'],
+                    ['LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled'],
                 ],
                 'default' => 0,
             ]
