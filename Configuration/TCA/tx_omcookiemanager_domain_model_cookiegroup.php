@@ -20,7 +20,8 @@ return [
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_grp.svg'
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, gtm_event_name, description, essential, cookies'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, essential, cookies,
+        --div--;LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.tab.google,gtm_event_name,gtm_consent_grps'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -136,7 +137,7 @@ return [
                 'rows' => 15,
                 'eval' => 'trim',
             ],
-            
+
         ],
         'essential' => [
             'exclude' => true,
@@ -166,6 +167,34 @@ return [
                 ],
             ],
 
+        ],
+        'gtm_consent_grps' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups',
+            'description' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description',
+            'config' => [
+                'type' => 'select',
+                'maxitems' => 99,
+                'renderType' => 'selectMultipleSideBySide',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_storage',
+                        'value' => 'ad_storage',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_user_data',
+                        'value' => 'ad_user_data',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_personalization',
+                        'value' => 'ad_personalization',
+                    ],
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.analytics_storage',
+                        'value' => 'analytics_storage',
+                    ],
+                ],
+            ],
         ],
     ],
 ];

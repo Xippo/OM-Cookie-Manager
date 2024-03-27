@@ -36,6 +36,9 @@
             <trans-unit id="tx_omcookiemanager.fe.info.settings-open" resname="tx_omcookiemanager.fe.info.settings-open">
                 <source>Open cookie settings</source>
             </trans-unit>
+            <trans-unit id="tx_omcookiemanager.be.constants.cat" resname="tx_omcookiemanager.be.constants.cat">
+                <source>OM Cookie Consent Manager</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

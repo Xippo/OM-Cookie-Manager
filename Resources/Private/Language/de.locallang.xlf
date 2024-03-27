@@ -48,6 +48,10 @@
                 <source>Open cookie settings</source>
                 <target>Cookie-Einstellungen öffnen</target>
             </trans-unit>
+            <trans-unit id="tx_omcookiemanager.be.constants.cat" resname="tx_omcookiemanager.be.constants.cat">
+                <source>OM Cookie Consent Manager</source>
+                <target>OM Cookie Consent Manager</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -27,6 +27,9 @@
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup" resname="tx_omcookiemanager_domain_model_cookiegroup">
 				<source>Cookie Group</source>
 			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.tab.google" resname="tx_omcookiemanager_domain_model_cookiegroup.tab.google">
+				<source>Google (GTM)</source>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.name" resname="tx_omcookiemanager_domain_model_cookiegroup.name">
 				<source>Name</source>
 			</trans-unit>
@@ -54,6 +57,24 @@
             <trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.groups" resname="tx_omcookiemanager_domain_model_cookiepanel.groups">
                 <source>Active groups and there ordering</source>
             </trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups">
+				<source>Google Consent Mode v2 - Categories to Activate with this Group </source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
+				<source>Per Default all groups are disabled. More information about the categories can be found here https://support.google.com/tagmanager/answer/13802165?sjid=3054677762310188636-EU</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_storage" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
+				<source>AD Storage: Enables the storage of advertising-related data such as cookies</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_user_data" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
+				<source>AD User Data: Defines the consent to send advertising-related user data to Google</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_personalization" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
+				<source>AD Personalization: Sets the consent for personalized ads</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.analytics_storage" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
+				<source>Analytics Storage: Enables the storage of analysis-related data such as cookies, e.g. on visit duration</source>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml" resname="tx_omcookiemanager_domain_model_cookiehtml">
 				<source>Cookie HTML</source>
 			</trans-unit>
