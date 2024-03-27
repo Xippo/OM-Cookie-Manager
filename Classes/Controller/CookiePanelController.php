@@ -77,6 +77,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             //render only the first
             /** @var CookiePanel $panel */
             $panel = $allPanels->getFirst();
+            $this->view->assign('cookiePanel',$panel);
             $groupIds = explode(',',$panel->getGroups());
             if(count($groupIds) > 0){
                 // @todo make some nice sql query in repo for this
@@ -97,10 +98,9 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
                 $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
                 $pageRenderer->addHeaderData('<script id="om-cookie-consent" type="application/json">'.$grpJson.'</script>');
             }
-
-            $this->view->assign('cookiePanel',$panel);
-            $this->view->assign('cookieGroups',$cookieGroups);
-
+            if (true === isset($cookieGroups)){
+                $this->view->assign('cookieGroups',$cookieGroups);
+            }
         }
         return $this->htmlResponse();
     }
@@ -125,7 +125,9 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
                     $cookieGroups[] = $grp;
                 }
             }
-            $this->view->assign('cookieGroups',$cookieGroups);
+            if (true === isset($cookieGroups)){
+                $this->view->assign('cookieGroups',$cookieGroups);
+            }
         }
 
         return $this->htmlResponse();
