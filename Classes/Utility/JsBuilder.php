@@ -19,6 +19,7 @@ use OM\OmCookieManager\Domain\Model\CookieHtml;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\Query\Restriction\QueryRestrictionInterface;
 use TYPO3\CMS\Extbase\Mvc\RequestInterface;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 class JsBuilder
@@ -39,8 +40,13 @@ class JsBuilder
         }
         /** @var CookieGroup $group */
         foreach ($groups as $group){
-            if (is_object($group->getCookies()) || $group->getCookies()->count() > 0){
+            if(false === empty($group->getGtmConsentGrps())){
+                $grpArray['group-' . $group->getUid()]['gtmConsentMode'] = $group->getGtmConsentGrps();
+            }
+            if(false === empty($group->getGtmEventName())){
                 $grpArray['group-' . $group->getUid()]['gtm'] = $group->getGtmEventName();
+            }
+            if (is_object($group->getCookies()) || $group->getCookies()->count() > 0){
                 /** @var Cookie $cookie */
                 foreach ($group->getCookies() as $cookie){
                     if (is_object($cookie->getCookieHtml()) || $cookie->getCookieHtml()->count() > 0){

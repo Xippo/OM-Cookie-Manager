@@ -1,6 +1,7 @@
 # customcategory=om_cookie_manager=LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang.xlf:tx_omcookiemanager.be.constants.cat
 # customsubcategory=01_Persistence=Persistence
 # customsubcategory=02_View=View Templates
+# customsubcategory=03_Settings=Settings
 
 plugin.tx_omcookiemanager_main {
     view {
@@ -12,9 +13,11 @@ plugin.tx_omcookiemanager_main {
         layoutRootPath = EXT:om_cookie_manager/Resources/Private/Layouts/
     }
     settings{
-        # cat=om_cookie_manager//file; type=string; label=Main CSS File
+        # cat=om_cookie_manager/03_Settings/file; type=boolean; label=Include Google Consent Mode V2 Default values. (ad_storage,ad_user_data,ad_personalization,analytics_storage as denied)
+        googleConsentModeV2 = 1
+        # cat=om_cookie_manager/03_Settings/file; type=string; label=Main CSS File
         cssFile = EXT:om_cookie_manager/Resources/Public/Css/cookie_panel.css
-        # cat=om_cookie_manager//file; type=string; label=Main JS File
+        # cat=om_cookie_manager/03_Settings/file; type=string; label=Main JS File
         jsFile = EXT:om_cookie_manager/Resources/Public/Js/om_cookie_main.js
     }
     persistence {

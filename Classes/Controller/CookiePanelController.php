@@ -7,6 +7,7 @@ use OM\OmCookieManager\Domain\Model\CookiePanel;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /***
@@ -59,6 +60,22 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     {
         /** @var PageRenderer $pageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        if(empty($this->settings['googleConsentModeV2']) === false) {
+            $googleConsentModeV2DefaultValues = "
+            <script> 
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+    
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied'
+            });
+            </script>
+            ";
+            $pageRenderer->addHeaderData($googleConsentModeV2DefaultValues);
+        }
         if(empty($this->settings['js']) === false){
             $pageRenderer->addJsFooterFile($this->settings['js']);
         }

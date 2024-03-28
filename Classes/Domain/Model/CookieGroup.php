@@ -20,7 +20,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * name
-     * 
+     *
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
@@ -41,15 +41,22 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $gtmEventName = '';
 
     /**
+     * gtm consent mode groups
+     *
+     * @var string
+     */
+    protected $gtmConsentGrps = '';
+
+    /**
      * essential
-     * 
+     *
      * @var bool
      */
     protected $essential = false;
 
     /**
      * cookies
-     * 
+     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
@@ -70,7 +77,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Do not modify this method!
      * It will be rewritten on each save in the extension builder
      * You may modify the constructor of this class instead
-     * 
+     *
      * @return void
      */
     protected function initStorageObjects()
@@ -80,7 +87,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the name
-     * 
+     *
      * @return string $name
      */
     public function getName()
@@ -90,7 +97,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the name
-     * 
+     *
      * @param string $name
      * @return void
      */
@@ -101,7 +108,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the description
-     * 
+     *
      * @return string $description
      */
     public function getDescription()
@@ -111,7 +118,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the description
-     * 
+     *
      * @param string $description
      * @return void
      */
@@ -122,7 +129,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the essential
-     * 
+     *
      * @return bool $essential
      */
     public function getEssential()
@@ -132,7 +139,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the essential
-     * 
+     *
      * @param bool $essential
      * @return void
      */
@@ -143,7 +150,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the boolean state of essential
-     * 
+     *
      * @return bool
      */
     public function isEssential()
@@ -153,7 +160,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Adds a Cookie
-     * 
+     *
      * @param \OM\OmCookieManager\Domain\Model\Cookie $cooky
      * @return void
      */
@@ -164,7 +171,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Removes a Cookie
-     * 
+     *
      * @param \OM\OmCookieManager\Domain\Model\Cookie $cookyToRemove The Cookie to be removed
      * @return void
      */
@@ -175,7 +182,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the cookies
-     * 
+     *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie> $cookies
      */
     public function getCookies()
@@ -185,7 +192,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the cookies
-     * 
+     *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie> $cookies
      * @return void
      */
@@ -208,5 +215,21 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setGtmEventName(string $gtmEventName)
     {
         $this->gtmEventName = $gtmEventName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGtmConsentGrps(): string
+    {
+        return $this->gtmConsentGrps;
+    }
+
+    /**
+     * @param string $gtmConsentGrps
+     */
+    public function setGtmConsentGrps(string $gtmConsentGrps): void
+    {
+        $this->gtmConsentGrps = $gtmConsentGrps;
     }
 }

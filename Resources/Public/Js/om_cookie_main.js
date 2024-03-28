@@ -1,6 +1,7 @@
 try {
     var omCookieGroups = JSON.parse(document.getElementById('om-cookie-consent').innerHTML);
     var omGtmEvents = [];
+    var omGtmConsentModeGrantedGrps = [];
 }
 catch(err) {
     console.log('OM Cookie Manager: No Cookie Groups found! Maybe you have forgot to set the page id inside the constants of the extension')
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         //push stored events(sored by omCookieEnableCookieGrp) to gtm. We push this last so we are sure that gtm is loaded
         pushGtmEvents(omGtmEvents);
+        omPushGtmConsentModeGrpsEvents(omGtmConsentModeGrantedGrps);
         omTriggerPanelEvent(['cookieconsentscriptsloaded']);
     }
     if(openCookiePanel === true){
@@ -142,6 +144,19 @@ var pushGtmEvents = function (events) {
         });
     });
 };
+
+var omPushGtmConsentModeGrpsEvents = function (groups) {
+    groupsObject = {};
+    groups.forEach((value) => {
+        groupsObject[value] = 'granted';
+    });
+    if(Object.keys(groupsObject).length > 0){
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'update', groupsObject);
+    }
+
+};
 var omCookieEnableCookieGrp = function (groupKey){
     if(omCookieGroups[groupKey] !== undefined){
         for (var key in omCookieGroups[groupKey]) {
@@ -152,6 +167,15 @@ var omCookieEnableCookieGrp = function (groupKey){
             if(key === 'gtm'){
                 if(omCookieGroups[groupKey][key]){
                     omGtmEvents.push(omCookieGroups[groupKey][key]);
+                }
+                continue;
+            }
+            if(key === 'gtmConsentMode'){
+                if(omCookieGroups[groupKey][key]){
+                    omCookieGroups[groupKey][key].split(',').forEach((value) => {
+                        omGtmConsentModeGrantedGrps.indexOf(value) === -1 ? omGtmConsentModeGrantedGrps.push(value) : false;
+                    });
+                    omGtmConsentModeGrantedGrps.push();
                 }
                 continue;
             }
