@@ -168,33 +168,5 @@ return [
             ],
 
         ],
-        'gtm_consent_grps' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups',
-            'description' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description',
-            'config' => [
-                'type' => 'select',
-                'maxitems' => 99,
-                'renderType' => 'selectMultipleSideBySide',
-                'items' => [
-                    [
-                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_storage',
-                        'value' => 'ad_storage',
-                    ],
-                    [
-                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_user_data',
-                        'value' => 'ad_user_data',
-                    ],
-                    [
-                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_personalization',
-                        'value' => 'ad_personalization',
-                    ],
-                    [
-                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.analytics_storage',
-                        'value' => 'analytics_storage',
-                    ],
-                ],
-            ],
-        ],
     ],
 ];
