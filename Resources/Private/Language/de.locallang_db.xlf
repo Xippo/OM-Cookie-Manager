@@ -79,8 +79,7 @@
 				<target>Google Consent Mode v2 - Kategorien</target>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
-				<source>More information about the categories can be found here https://support.google.com/tagmanager/answer/13802165?sjid=3054677762310188636-EU</source>
-				<target>Weitere Informationen zu den Google Einwilligung Kategorien können Sie hier finden https://support.google.com/tagmanager/answer/13802165?sjid=3054677762310188636-EU</target>
+				<target>Per default sind alle Kategorien deaktiviert, solange die Standardeinstellung in den TypoScript Konstanten aktiv ist. Weitere Informationen zu den Google Einwilligung Kategorien können Sie hier finden https://support.google.com/tagmanager/answer/13802165?sjid=3054677762310188636-EU</target>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.ad_storage" resname="tx_omcookiemanager_domain_model_cookiegroup.gtm_groups.description">
 				<target>AD Storage: Ermöglicht das Speichern von werbebezogenen Daten wie Cookies</target>
