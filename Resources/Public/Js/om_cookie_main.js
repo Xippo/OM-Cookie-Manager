@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         }
         //push stored events(sored by omCookieEnableCookieGrp) to gtm. We push this last so we are sure that gtm is loaded
-        pushGtmEvents(omGtmEvents);
         omPushGtmConsentModeGrpsEvents(omGtmConsentModeGrantedGrps);
+        pushGtmEvents(omGtmEvents);
         omTriggerPanelEvent(['cookieconsentscriptsloaded']);
     }
     if(openCookiePanel === true){
@@ -119,6 +119,7 @@ var omCookieSaveAction = function() {
     cookie += 'dismiss';
     //cookie = cookie.slice(0, -1);
     omCookieUtility.setCookie('omCookieConsent',cookie,364);
+    omPushGtmConsentModeGrpsEvents(omGtmConsentModeGrantedGrps);
     //push stored events to gtm. We push this last so we are sure that gtm is loaded
     pushGtmEvents(omGtmEvents);
     omTriggerPanelEvent(['cookieconsentsave','cookieconsentscriptsloaded']);
