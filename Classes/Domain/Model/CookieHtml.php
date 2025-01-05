@@ -48,7 +48,7 @@ class CookieHtml extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $html
      * @return void
      */
-    public function setHtml($html)
+    public function setHtml($html): void
     {
         $this->html = $html;
     }
@@ -69,7 +69,7 @@ class CookieHtml extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param int $insertPlace
      * @return void
      */
-    public function setInsertPlace($insertPlace)
+    public function setInsertPlace($insertPlace): void
     {
         $this->insertPlace = $insertPlace;
     }

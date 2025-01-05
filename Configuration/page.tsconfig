@@ -1,0 +1,15 @@
+mod {
+        wizards.newContentElement.wizardItems.plugins {
+            elements {
+                main {
+                    iconIdentifier = om_cookie_manager-plugin-main
+                    title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name
+                    description = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.description
+                    tt_content_defValues {
+                        CType = omcookiemanager_main
+                    }
+                }
+            }
+            show = *
+        }
+   }

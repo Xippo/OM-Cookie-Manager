@@ -7,7 +7,9 @@ defined('TYPO3') || die();
     'Info',
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
-    ]
+    ],
+    [],
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
@@ -15,34 +17,9 @@ defined('TYPO3') || die();
     'Main',
     [
         \OM\OmCookieManager\Controller\CookiePanelController::class => 'info',
-    ]
-);
-
-// wizards
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-    'mod {
-        wizards.newContentElement.wizardItems.plugins {
-            elements {
-                main {
-                    iconIdentifier = om_cookie_manager-plugin-main
-                    title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name
-                    description = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.description
-                    tt_content_defValues {
-                        CType = list
-                        list_type = omcookiemanager_main
-                    }
-                }
-            }
-            show = *
-        }
-   }'
-);
-
-$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-$iconRegistry->registerIcon(
-    'om_cookie_manager-plugin-main',
-    \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-    ['source' => 'EXT:om_cookie_manager/Resources/Public/Icons/Extension.svg']
+    ],
+    [],
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 // hook registration
