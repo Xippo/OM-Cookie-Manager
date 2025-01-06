@@ -26,7 +26,7 @@ class ProcessDatamapClass
      * @param DataHandler $dataHandler
      * @return void
      */
-    public function processDatamap_afterAllOperations(DataHandler $dataHandler)
+    public function processDatamap_afterAllOperations(DataHandler $dataHandler): void
     {
         if (isset($dataHandler->datamap['tx_omcookiemanager_domain_model_cookiepanel']) === false && isset($dataHandler->datamap['tx_omcookiemanager_domain_model_cookiegroup']) === false) {
             return;

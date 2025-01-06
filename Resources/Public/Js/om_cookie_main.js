@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function(){
         panelButtons[i].addEventListener('click', omCookieSaveAction, false);
     }
     for (i = 0; i < openButtons.length; i++) {
-        openButtons[i].addEventListener('click', function () {
+        openButtons[i].addEventListener('click', function (event) {
+			event.preventDefault();
             omCookiePanel.classList.toggle('active');
         }, false);
     }

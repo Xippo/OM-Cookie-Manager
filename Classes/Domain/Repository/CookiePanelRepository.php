@@ -18,7 +18,7 @@ namespace OM\OmCookieManager\Domain\Repository;
 class CookiePanelRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    public function initializeObject() {
+    public function initializeObject(): void {
         //set default translation behavior. So we hopefully avoid problems with different system settings
         $querySettings = $this->createQuery()->getQuerySettings();
         $this->setDefaultQuerySettings($querySettings);

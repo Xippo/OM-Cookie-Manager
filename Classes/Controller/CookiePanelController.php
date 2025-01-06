@@ -33,12 +33,10 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      */
     protected $cookiePanelRepository = null;
 
-    /**
-     * @param \OM\OmCookieManager\Domain\Repository\CookiePanelRepository $cookiePanelRepository
-     */
-    public function injectCookiePanelRepository(\OM\OmCookieManager\Domain\Repository\CookiePanelRepository $cookiePanelRepository)
+    public function __construct(\OM\OmCookieManager\Domain\Repository\CookiePanelRepository $cookiePanelRepository, \OM\OmCookieManager\Domain\Repository\CookieGroupRepository $cookieGroupRepository)
     {
         $this->cookiePanelRepository = $cookiePanelRepository;
+        $this->cookieGroupRepository = $cookieGroupRepository;
     }
 
     /**
@@ -48,15 +46,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      */
     protected $cookieGroupRepository = null;
 
-    /**
-     * @param \OM\OmCookieManager\Domain\Repository\CookieGroupRepository $cookieGroupRepository
-     */
-    public function injectCookieGroupRepository(\OM\OmCookieManager\Domain\Repository\CookieGroupRepository $cookieGroupRepository)
-    {
-        $this->cookieGroupRepository = $cookieGroupRepository;
-    }
-
-    public function initializeShowAction()
+    public function initializeShowAction(): void
     {
         /** @var PageRenderer $pageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
@@ -87,7 +77,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function showAction()
+    public function showAction(): \Psr\Http\Message\ResponseInterface
     {
         $allPanels = $this->cookiePanelRepository->findAll();
         if($allPanels->count() > 0){
@@ -125,7 +115,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function infoAction()
+    public function infoAction(): \Psr\Http\Message\ResponseInterface
     {
         $allPanels = $this->cookiePanelRepository->findAll();
 

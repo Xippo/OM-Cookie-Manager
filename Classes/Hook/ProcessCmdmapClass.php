@@ -25,7 +25,7 @@ class ProcessCmdmapClass
      *
      * @return void
      */
-    public function processCmdmap_deleteAction($table, $id, $recordToDelete, $recordWasDeleted, DataHandler$datahandler)
+    public function processCmdmap_deleteAction($table, $id, $recordToDelete, $recordWasDeleted, DataHandler$datahandler): void
     {
         if ($table === 'tx_omcookiemanager_domain_model_cookiepanel' || $table === 'tx_omcookiemanager_domain_model_cookiegroup') {
             $clearCacheOpt = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'clearCache');
