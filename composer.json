@@ -1,5 +1,5 @@
 {
-    "name": "mohsinqk/om-cookie-manager",
+    "name": "opfaff/om-cookie-manager",
     "type": "typo3-cms-extension",
     "description": "",
     "authors": [
@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^11.5 || ^12.4 || ^13.4"
+        "typo3/cms-core": "^13.4"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +22,8 @@
         }
     },
     "replace": {
-        "opfaff/om-cookie-manager": "*"
+        "om/om-cookie-consent": "self.version",
+        "typo3-ter/om-cookie-consent": "self.version"
     },
     "extra": {
         "typo3/cms": {
