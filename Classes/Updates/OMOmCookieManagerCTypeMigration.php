@@ -36,6 +36,7 @@ final class OMOmCookieManagerCTypeMigration extends AbstractListTypeToCTypeUpdat
     {
         return [
             'omcookiemanager_main' => 'omcookiemanager_main',
+            'omcookiemanager_info' => 'omcookiemanager_info',
         ];
     }
 }

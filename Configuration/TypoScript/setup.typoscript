@@ -31,4 +31,4 @@ plugin.tx_omcookiemanager_main {
 plugin.tx_omcookiemanager_info < plugin.tx_omcookiemanager_main
 
 //add Extbase plugin to the default page
-page.1572349671 < tt_content.list.20.omcookiemanager_info
+page.1572349671 < tt_content.omcookiemanager_info.20
