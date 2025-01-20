@@ -4,6 +4,7 @@ namespace OM\OmCookieManager\Controller;
 
 use OM\OmCookieManager\Domain\Model\CookieGroup;
 use OM\OmCookieManager\Domain\Model\CookiePanel;
+use TYPO3\CMS\Core\Domain\ConsumableString;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -61,8 +62,13 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
         /** @var PageRenderer $pageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         if(empty($this->settings['googleConsentModeV2']) === false) {
+            /** @var ConsumableString|null $nonce */
+            $nonceAttribute = $this->request->getAttribute('nonce');
+            if ($nonceAttribute instanceof ConsumableString) {
+                $nonce = $nonceAttribute->consume();
+            }
             $googleConsentModeV2DefaultValues = "
-            <script> 
+            <script nonce='".$nonce."'>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
     
