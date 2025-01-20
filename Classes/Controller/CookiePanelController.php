@@ -64,6 +64,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
         if(empty($this->settings['googleConsentModeV2']) === false) {
             /** @var ConsumableString|null $nonce */
             $nonceAttribute = $this->request->getAttribute('nonce');
+            $nonce = '';
             if ($nonceAttribute instanceof ConsumableString) {
                 $nonce = $nonceAttribute->consume();
             }
