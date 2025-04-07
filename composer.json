@@ -16,11 +16,6 @@
             "OM\\OmCookieManager\\": "Classes"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "OM\\OmCookieManager\\Tests\\": "Tests"
-        }
-    },
     "replace": {
         "om/om-cookie-consent": "self.version",
         "typo3-ter/om-cookie-consent": "self.version"
