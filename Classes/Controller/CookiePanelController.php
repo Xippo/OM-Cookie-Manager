@@ -7,9 +7,7 @@ use OM\OmCookieManager\Domain\Model\CookiePanel;
 use TYPO3\CMS\Core\Domain\ConsumableString;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\PathUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
+
 
 /***
  *

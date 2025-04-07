@@ -19,8 +19,6 @@ use OM\OmCookieManager\Domain\Model\CookieHtml;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\Query\Restriction\QueryRestrictionInterface;
 use TYPO3\CMS\Extbase\Mvc\RequestInterface;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
-use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 class JsBuilder
 {
