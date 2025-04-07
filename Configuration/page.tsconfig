@@ -12,4 +12,8 @@ mod {
             }
             show = *
         }
+        web_list.hideTables = tx_omcookiemanager_domain_model_cookie,tx_omcookiemanager_domain_model_cookiehtml
+        web_list.deniedNewTables = tx_omcookiemanager_domain_model_cookie,tx_omcookiemanager_domain_model_cookiehtml
    }
+
+
