@@ -43,7 +43,9 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [TASK] improve TYPO3 12 compatibility, remove obsolete configurations and replace outdated API calls (Thx Nikita)
 **12.1.0**
 - [FEATURE] add native support for google consent mode V2. More setup information can be found inside the docu on my site (development sponsored by web-crossing.com, nerdost.net and smaller donations)
-
+**12.1.1**
+- [Compatibility] improve TCA compatibility. Thanks to dbtisch-no for contribution
+- [Compatibility] improve compatibility with CSP. Thanks to Michael Grundkötter for contribution
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
