@@ -22,8 +22,8 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * name
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
+    #[TYPO3\CMS\Extbase\Annotation\Validate(['validator' => 'NotEmpty'])]
     protected $name = '';
 
     /**
@@ -58,8 +58,8 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * cookies
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
+    #[TYPO3\CMS\Extbase\Annotation\ORM\Cascade(['value' => 'remove'])]
     protected $cookies = null;
 
     /**
@@ -101,7 +101,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $name
      * @return void
      */
-    public function setName($name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
@@ -122,7 +122,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $description
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription($description): void
     {
         $this->description = $description;
     }
@@ -143,7 +143,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param bool $essential
      * @return void
      */
-    public function setEssential($essential)
+    public function setEssential($essential): void
     {
         $this->essential = $essential;
     }
@@ -164,7 +164,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\Cookie $cooky
      * @return void
      */
-    public function addCooky(\OM\OmCookieManager\Domain\Model\Cookie $cooky)
+    public function addCooky(\OM\OmCookieManager\Domain\Model\Cookie $cooky): void
     {
         $this->cookies->attach($cooky);
     }
@@ -175,7 +175,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\Cookie $cookyToRemove The Cookie to be removed
      * @return void
      */
-    public function removeCooky(\OM\OmCookieManager\Domain\Model\Cookie $cookyToRemove)
+    public function removeCooky(\OM\OmCookieManager\Domain\Model\Cookie $cookyToRemove): void
     {
         $this->cookies->detach($cookyToRemove);
     }
@@ -196,7 +196,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie> $cookies
      * @return void
      */
-    public function setCookies(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $cookies)
+    public function setCookies(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $cookies): void
     {
         $this->cookies = $cookies;
     }
@@ -212,7 +212,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @param string $gtmEventName
      */
-    public function setGtmEventName(string $gtmEventName)
+    public function setGtmEventName(string $gtmEventName): void
     {
         $this->gtmEventName = $gtmEventName;
     }

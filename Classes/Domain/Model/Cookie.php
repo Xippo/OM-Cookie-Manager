@@ -22,8 +22,8 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * name
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
+    #[TYPO3\CMS\Extbase\Annotation\Validate(['validator' => 'NotEmpty'])]
     protected $name = '';
 
     /**
@@ -58,8 +58,8 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * cookieHtml
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\CookieHtml>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
+    #[TYPO3\CMS\Extbase\Annotation\ORM\Cascade(['value' => 'remove'])]
     protected $cookieHtml = null;
 
     /**
@@ -91,7 +91,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\CookieHtml $cookieHtml
      * @return void
      */
-    public function addCookieHtml(\OM\OmCookieManager\Domain\Model\CookieHtml $cookieHtml)
+    public function addCookieHtml(\OM\OmCookieManager\Domain\Model\CookieHtml $cookieHtml): void
     {
         $this->cookieHtml->attach($cookieHtml);
     }
@@ -102,7 +102,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\CookieHtml $cookieHtmlToRemove The CookieHtml to be removed
      * @return void
      */
-    public function removeCookieHtml(\OM\OmCookieManager\Domain\Model\CookieHtml $cookieHtmlToRemove)
+    public function removeCookieHtml(\OM\OmCookieManager\Domain\Model\CookieHtml $cookieHtmlToRemove): void
     {
         $this->cookieHtml->detach($cookieHtmlToRemove);
     }
@@ -123,7 +123,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\CookieHtml> $cookieHtml
      * @return void
      */
-    public function setCookieHtml(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $cookieHtml)
+    public function setCookieHtml(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $cookieHtml): void
     {
         $this->cookieHtml = $cookieHtml;
     }
@@ -144,7 +144,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $name
      * @return void
      */
-    public function setName($name)
+    public function setName($name): void
     {
         $this->name = $name;
     }
@@ -165,7 +165,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $description
      * @return void
      */
-    public function setDescription($description)
+    public function setDescription($description): void
     {
         $this->description = $description;
     }
@@ -186,7 +186,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param string $provider
      * @return void
      */
-    public function setProvider($provider)
+    public function setProvider($provider): void
     {
         $this->provider = $provider;
     }
@@ -207,7 +207,7 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup
      * @return void
      */
-    public function setCookieGroup(\OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup)
+    public function setCookieGroup(\OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup): void
     {
         $this->cookieGroup = $cookieGroup;
     }

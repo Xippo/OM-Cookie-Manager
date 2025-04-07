@@ -36,7 +36,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'default' => 0,
-                'items' => [],
+                'items' => [
+                    ['label' => '', 'value' => 0],
+                ],
                 'foreign_table' => 'tx_omcookiemanager_domain_model_cookie',
                 'foreign_table_where' => 'AND {#tx_omcookiemanager_domain_model_cookie}.{#pid}=###CURRENT_PID### AND {#tx_omcookiemanager_domain_model_cookie}.{#sys_language_uid} IN (-1,0)',
             ],
@@ -72,8 +74,7 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'datetime',
+                'type' => 'datetime',
                 'default' => 0,
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
@@ -84,8 +85,7 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'datetime',
+                'type' => 'datetime',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038)
