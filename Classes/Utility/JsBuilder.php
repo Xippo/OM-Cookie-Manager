@@ -34,9 +34,9 @@ class JsBuilder
         $grpArray = [];
         $fetchTsConstants = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'injectTsConstants');
         if((int)$fetchTsConstants === 1){
-            /** @var TypoScriptFrontendController $frontendController */
-            $frontendController = $request->getAttribute('frontend.controller');
-            self::$flatSetup = $frontendController->tmpl->flatSetup;;
+            /** @var \TYPO3\CMS\Core\TypoScript\FrontendTypoScript $typoscript */
+            $typoscript = $request->getAttribute('frontend.typoscript');
+            self::$flatSetup = $typoscript->getFlatSettings();
         }
         /** @var CookieGroup $group */
         foreach ($groups as $group){
