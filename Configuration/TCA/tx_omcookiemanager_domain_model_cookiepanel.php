@@ -5,6 +5,7 @@ return [
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -36,7 +37,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'default' => 0,
-                'items' => [],
+                'items' => [
+                    ['', 0],
+                ],
                 'foreign_table' => 'tx_omcookiemanager_domain_model_cookiepanel',
                 'foreign_table_where' => 'AND tx_omcookiemanager_domain_model_cookiepanel.pid=###CURRENT_PID### AND tx_omcookiemanager_domain_model_cookiepanel.sys_language_uid IN (-1,0)',
             ],
@@ -62,7 +65,8 @@ return [
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        'label' => '',
+                        0 => '',
+                        1 => '',
                         'invertStateDisplay' => true
                     ]
                 ],
@@ -73,7 +77,8 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'datetime',
+                'renderType' => 'inputDateTime',
+                'eval' => 'datetime,int',
                 'default' => 0,
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
@@ -85,7 +90,8 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'datetime',
+                'renderType' => 'inputDateTime',
+                'eval' => 'datetime,int',
                 'default' => 0,
                 'range' => [
                     'upper' => mktime(0, 0, 0, 1, 1, 2038)
@@ -128,8 +134,9 @@ return [
             'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.link',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'link',
-                'size' => 30
+                'renderType' => 'inputLink',
+                'size' => 30,
+                'eval' => 'trim'
             ],
         ],
         'groups' => [

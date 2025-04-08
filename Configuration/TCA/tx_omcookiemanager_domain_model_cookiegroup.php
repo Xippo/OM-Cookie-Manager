@@ -5,6 +5,7 @@ return [
         'label' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -37,7 +38,9 @@ return [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'default' => 0,
-                'items' => [],
+                'items' => [
+                    ['', 0],
+                ],
                 'foreign_table' => 'tx_omcookiemanager_domain_model_cookiegroup',
                 'foreign_table_where' => 'AND {#tx_omcookiemanager_domain_model_cookiegroup}.{#pid}=###CURRENT_PID### AND {#tx_omcookiemanager_domain_model_cookiegroup}.{#sys_language_uid} IN (-1,0)',
             ],
@@ -63,7 +66,8 @@ return [
                 'renderType' => 'checkboxToggle',
                 'items' => [
                     [
-                        'label' => '',
+                        0 => '',
+                        1 => '',
                         'invertStateDisplay' => true
                     ]
                 ],
@@ -141,9 +145,7 @@ return [
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    [
-                        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled'
-                    ],
+                    ['LLL:EXT:core/Resources/Private/Language/locallang_core.xlf:labels.enabled'],
                 ],
                 'default' => 0,
             ]
