@@ -48,7 +48,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $linkText = '';
 
     /**
-     * Link to cookie policy
+     * Link to legal notice
      *
      * @var string
      */
