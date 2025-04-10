@@ -20,7 +20,7 @@ return [
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_panel_icon.svg'
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, link, groups'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, link, link_text, link_legal_notice, link_legal_notice_text, groups'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -127,7 +127,7 @@ return [
                 'rows' => 15,
                 'eval' => 'trim',
             ],
-            
+
         ],
         'link' => [
             'exclude' => true,
@@ -135,6 +135,34 @@ return [
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'link_text' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.link_text',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'link_legal_notice' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.link_legal_notice',
+            'config' => [
+                'type' => 'input',
+                'renderType' => 'inputLink',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'link_legal_notice_text' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.link_legal_notice_text',
+            'config' => [
+                'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ],

@@ -3,8 +3,11 @@
 	<file source-language="en" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
 		<header/>
 		<body>
-			<trans-unit id="tx_omcookiemanager.fe.cookie_info" resname="tx_omcookiemanager.fe.cookie_info">
-                <source>Get more info about used cookies</source>
+			<trans-unit id="tx_omcookiemanager.fe.privacy_policy" resname="tx_omcookiemanager.fe.cookie_info">
+                <source>Privacy policy</source>
+            </trans-unit>
+            <trans-unit id="tx_omcookiemanager.fe.legal_notice" resname="tx_omcookiemanager.fe.cookie_info">
+                <source>Legal notice</source>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_accept" resname="tx_omcookiemanager.fe.cookie_save">
                 <source>Accept all</source>

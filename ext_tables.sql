@@ -32,6 +32,9 @@ CREATE TABLE tx_omcookiemanager_domain_model_cookiepanel (
 	name varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	link varchar(255) DEFAULT '' NOT NULL,
+    link_text varchar(255) DEFAULT '' NOT NULL,
+    link_legal_notice varchar(255) DEFAULT '' NOT NULL,
+    link_legal_notice_text varchar(255) DEFAULT '' NOT NULL,
 	groups varchar(1024) DEFAULT '' NOT NULL,
 );
 

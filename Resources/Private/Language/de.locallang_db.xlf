@@ -66,9 +66,21 @@
 				<source>Description (this is shown in the information table/view)</source>
 				<target>Beschreibung (wird in der Informationstabelle angezeigt)</target>
 			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.link_legal_notice" resname="tx_omcookiemanager_domain_model_cookiepanel.link">
+				<source>Link to the legal notice</source>
+				<target>Link zum Impressum</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.link_legal_notice_text" resname="tx_omcookiemanager_domain_model_cookiepanel.link">
+				<source>Alternative link text for legal notice link</source>
+				<target>Alternativer Linktext für den Impressum Link</target>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.link" resname="tx_omcookiemanager_domain_model_cookiepanel.link">
-				<source>Link to the cookie or privacy policy</source>
-				<target>Link zur Datenschutzseite oder Cookie policy (Der Link wird im Optin Panel zu Verfügung gestellt)</target>
+				<source>Link to cookie or privacy policy, will be shown on the panel</source>
+				<target>Link zur Datenschutzseite oder Cookie policy (Der Link wird im Optin Panel zur Verfügung gestellt)</target>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.link_text" resname="tx_omcookiemanager_domain_model_cookiepanel.link">
+				<source>Alternative link text for the cookie or privacy policy link</source>
+				<target>Alternativer Linktext für den Link zur Datenschutzseite</target>
 			</trans-unit>
             <trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.groups" resname="tx_omcookiemanager_domain_model_cookiepanel.groups">
                 <source>Active groups and there ordering</source>
