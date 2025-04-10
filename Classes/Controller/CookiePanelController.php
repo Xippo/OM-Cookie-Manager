@@ -133,6 +133,13 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
                     $this->view->assign('suppressPanel',1);
                 }
             }
+            //check links and set default if needed
+            if(true === empty($panel->getLink()) && false === empty($this->settings['privacyPolicyPid'])){
+                $panel->setLink($this->settings['privacyPolicyPid']);
+            }
+            if(true === empty($panel->getLinkLegalNotice()) && false === empty($this->settings['legalNoticePid'])){
+                $panel->setLinkLegalNotice($this->settings['legalNoticePid']);
+            }
         }
         return $this->htmlResponse();
     }
