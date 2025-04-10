@@ -115,6 +115,8 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             }
             //check if panel should be suppressed
             if(false === empty($this->settings['dontShowOnPids'])){
+                // false positive
+                // @extensionScannerIgnoreLine
                 $pageUid = $this->request->getAttribute('frontend.controller')->id;
                 $supressPIds = array_map('intval',explode(',',$this->settings['dontShowOnPids']));
                 if (true === in_array($pageUid, $supressPIds, true)){
