@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function(){
         pushGtmEvents(omGtmEvents);
         omTriggerPanelEvent(['cookieconsentscriptsloaded']);
     }
+    //check explicit suppress
+    if(omCookiePanel.dataset.omcookiePanelSuppress > 0){
+        openCookiePanel = false;
+    }
     if(openCookiePanel === true){
         //timeout, so the user can see the page before he get the nice cookie panel
         setTimeout(function () {

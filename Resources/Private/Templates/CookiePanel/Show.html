@@ -2,7 +2,7 @@
 	<f:layout name="Default" />
 
 	<f:section name="content">
-		<div class="om-cookie-panel" data-omcookie-panel="1">
+		<div class="om-cookie-panel" data-omcookie-panel="1" data-omcookie-panel-suppress="{f:if(condition: suppressPanel, then:1, else:0)}">
 			<h3>{cookiePanel.name}</h3>
 			<div class="cookie-panel__selection">
 				<form>
