@@ -13,6 +13,8 @@ plugin.tx_omcookiemanager_main {
         js = {$plugin.tx_omcookiemanager_main.settings.jsFile}
         googleConsentModeV2 = {$plugin.tx_omcookiemanager_main.settings.googleConsentModeV2}
         dontShowOnPids = {$plugin.tx_omcookiemanager_main.settings.dontShowOnPids}
+        legalNoticePid = {$plugin.tx_omcookiemanager_main.settings.legalNoticePid}
+        privacyPolicyPid = {$plugin.tx_omcookiemanager_main.settings.privacyPolicyPid}
     }
     persistence {
         storagePid = {$plugin.tx_omcookiemanager_main.persistence.storagePid}
