@@ -125,6 +125,14 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             if (true === isset($cookieGroups)){
                 $this->view->assign('cookieGroups',$cookieGroups);
             }
+            //check if panel should be suppressed
+            if(false === empty($this->settings['dontShowOnPids'])){
+                $pageUid = $this->request->getAttribute('frontend.controller')->id;
+                $supressPIds = array_map('intval',explode(',',$this->settings['dontShowOnPids']));
+                if (true === in_array($pageUid, $supressPIds, true)){
+                    $this->view->assign('suppressPanel',1);
+                }
+            }
         }
         return $this->htmlResponse();
     }

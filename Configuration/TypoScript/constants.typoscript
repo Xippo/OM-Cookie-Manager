@@ -19,6 +19,8 @@ plugin.tx_omcookiemanager_main {
         cssFile = EXT:om_cookie_manager/Resources/Public/Css/cookie_panel.css
         # cat=om_cookie_manager/03_Settings/file; type=string; label=Main JS File
         jsFile = EXT:om_cookie_manager/Resources/Public/Js/om_cookie_main.js
+        # cat=om_cookie_manager/03_Settings/file; type=string; label=Comma separated pids where the panel don't show up automatically. Good for legal notice or privacy policy pages
+        dontShowOnPids =
     }
     persistence {
         # cat=om_cookie_manager/01_Persistence/a; type=string; label=Default storage PID
