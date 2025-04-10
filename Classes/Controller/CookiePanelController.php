@@ -117,7 +117,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
             if(false === empty($this->settings['dontShowOnPids'])){
                 // false positive
                 // @extensionScannerIgnoreLine
-                $pageUid = $this->request->getAttribute('frontend.controller')->id;
+                $pageUid = $this->request->getAttribute('frontend.page.information')->getId();
                 $supressPIds = array_map('intval',explode(',',$this->settings['dontShowOnPids']));
                 if (true === in_array($pageUid, $supressPIds, true)){
                     $this->view->assign('suppressPanel',1);
