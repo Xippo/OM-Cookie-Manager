@@ -46,6 +46,10 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 **12.1.1**
 - [Compatibility] improve TCA compatibility. Thanks to dbtisch-no for contribution
 - [Compatibility] improve compatibility with CSP. Thanks to Michael Grundkötter for contribution
+**12.2.0**
+- [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
+- [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
+- [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
