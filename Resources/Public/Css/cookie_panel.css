@@ -115,6 +115,9 @@
   display: flex;
   margin: 1em -0.5em 0;
 }
+.om-cookie-panel .cookie-panel__links a {
+  color: #666;
+}
 .om-cookie-panel .cookie-panel__links > .cookie-panel__link {
   padding: 0 .5em;
 }
