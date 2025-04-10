@@ -4,9 +4,13 @@
 		<header/>
 		<body>
 
-			<trans-unit id="tx_omcookiemanager.fe.cookie_info" resname="tx_omcookiemanager.fe.cookie_info">
-                <source>Get more info about used cookies</source>
-                <target>Mehr über die genutzten Cookies erfahren</target>
+            <trans-unit id="tx_omcookiemanager.fe.privacy_policy" resname="tx_omcookiemanager.fe.cookie_info">
+                <source>Privacy policy</source>
+                <target>Datenschutzerklärung</target>
+            </trans-unit>
+            <trans-unit id="tx_omcookiemanager.fe.legal_notice" resname="tx_omcookiemanager.fe.cookie_info">
+                <source>Legal notice</source>
+                <target>Impressum</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_accept" resname="tx_omcookiemanager.fe.cookie_save">
                 <source>Accept all</source>

@@ -28,17 +28,38 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * description
-     * 
+     *
      * @var string
      */
     protected $description = '';
 
     /**
      * Link to cookie policy
-     * 
+     *
      * @var string
      */
     protected $link = '';
+
+    /**
+     * Link text to cookie policy
+     *
+     * @var string
+     */
+    protected $linkText = '';
+
+    /**
+     * Link to cookie policy
+     *
+     * @var string
+     */
+    protected $linkLegalNotice = '';
+
+    /**
+     * Link Text for legal notice
+     *
+     * @var string
+     */
+    protected $linkLegalNoticeText = '';
 
     /**
      * groups
@@ -51,7 +72,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the name
-     * 
+     *
      * @return string $name
      */
     public function getName()
@@ -61,7 +82,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the name
-     * 
+     *
      * @param string $name
      * @return void
      */
@@ -72,7 +93,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the description
-     * 
+     *
      * @return string $description
      */
     public function getDescription()
@@ -82,7 +103,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the description
-     * 
+     *
      * @param string $description
      * @return void
      */
@@ -93,7 +114,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the link
-     * 
+     *
      * @return string $link
      */
     public function getLink()
@@ -103,7 +124,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the link
-     * 
+     *
      * @param string $link
      * @return void
      */
@@ -126,6 +147,36 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setGroups($groups): void
     {
         $this->groups = $groups;
+    }
+
+    public function getLinkText(): string
+    {
+        return $this->linkText;
+    }
+
+    public function setLinkText(string $linkText): void
+    {
+        $this->linkText = $linkText;
+    }
+
+    public function getLinkLegalNotice(): string
+    {
+        return $this->linkLegalNotice;
+    }
+
+    public function setLinkLegalNotice(string $linkLegalNotice): void
+    {
+        $this->linkLegalNotice = $linkLegalNotice;
+    }
+
+    public function getLinkLegalNoticeText(): string
+    {
+        return $this->linkLegalNoticeText;
+    }
+
+    public function setLinkLegalNoticeText(string $linkLegalNoticeText): void
+    {
+        $this->linkLegalNoticeText = $linkLegalNoticeText;
     }
 
 }

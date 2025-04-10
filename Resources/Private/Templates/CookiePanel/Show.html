@@ -24,8 +24,37 @@
 				</f:if>
 				<button data-omcookie-panel-save="save" class="cookie-panel__button"><f:translate key="tx_omcookiemanager.fe.cookie_save"/></button>
 			</div>
-			<f:if condition="{cookiePanel.link}">
-				<div class="cookie-panel__link"><f:link.typolink parameter="{cookiePanel.link}"><f:translate key="tx_omcookiemanager.fe.cookie_info"/></f:link.typolink></div>
+			<f:if condition="{cookiePanel.linkLegalNotice} || {cookiePanel.link}">
+				<div class="cookie-panel__links">
+					<f:if condition="{cookiePanel.linkLegalNotice}">
+						<div class="cookie-panel__link">
+							<f:link.typolink parameter="{cookiePanel.linkLegalNotice}">
+								<f:if condition="{cookiePanel.linkLegalNoticeText}">
+									<f:then>
+										{cookiePanel.linkLegalNoticeText}
+									</f:then>
+									<f:else>
+										<f:translate key="tx_omcookiemanager.fe.legal_notice"/>
+									</f:else>
+								</f:if>
+							</f:link.typolink>
+						</div>
+					</f:if>
+					<f:if condition="{cookiePanel.link}">
+						<div class="cookie-panel__link">
+							<f:link.typolink parameter="{cookiePanel.link}">
+								<f:if condition="{cookiePanel.linkText}">
+									<f:then>
+										{cookiePanel.linkText}
+									</f:then>
+									<f:else>
+										<f:translate key="tx_omcookiemanager.fe.privacy_policy"/>
+									</f:else>
+								</f:if>
+							</f:link.typolink>
+						</div>
+					</f:if>
+				</div>
 			</f:if>
 			<div class="cookie-panel__attribution">
 				<f:link.typolink target="_blank" parameter="https://olli-machts.de">Cookie optin by Olli machts</f:link.typolink>
