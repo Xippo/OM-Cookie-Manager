@@ -111,6 +111,13 @@
     margin-top: 0;
   }
 }
+.om-cookie-panel .cookie-panel__links {
+  display: flex;
+  margin: 1em -0.5em 0;
+}
+.om-cookie-panel .cookie-panel__links > .cookie-panel__link {
+  padding: 0 .5em;
+}
 .om-cookie-panel .cookie-panel__button--color--green {
   background-color: #8cad2d;
 }
