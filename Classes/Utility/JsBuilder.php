@@ -46,6 +46,9 @@ class JsBuilder
             if(false === empty($group->getGtmEventName())){
                 $grpArray['group-' . $group->getUid()]['gtm'] = $group->getGtmEventName();
             }
+            if(false === empty($group->getKeywords())){
+                $grpArray['group-' . $group->getUid()]['keywords'] = explode(',',$group->getKeywords());
+            }
             if (is_object($group->getCookies()) || $group->getCookies()->count() > 0){
                 /** @var Cookie $cookie */
                 foreach ($group->getCookies() as $cookie){

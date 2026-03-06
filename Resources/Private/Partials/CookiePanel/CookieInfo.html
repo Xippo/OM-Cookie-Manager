@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<form>
+    <f:for each="{cookieGroups}" as="group" iteration="i">
+        <div class="cookie-panel__group" id="cookie-panel__group-{group.uid}">
+            <h4>{group.name}</h4>
+            <span class="panel__group__cookie-toggle"></span>
+            <div>
+                <div class="cookie-panel__group__checkbox-container">
+                    <input class="cookie-panel__checkbox {f:if(condition:group.essential,then:'cookie-panel__checkbox--state-inactiv',else:'')}" data-omcookie-panel-grp="1" id="info-group-{group.uid}" type="checkbox" {f:if(condition:group.essential,then:'checked data-omcookie-panel-essential="1" disabled="disabled"',else:'')} value="group-{group.uid}" />
+                    <label for="info-group-{group.uid}">
+                        <span class="checkbox-toggle"></span>
+                        <span class="visually-hidden">{group.name}</span>
+                    </label>
+                </div>
+                <f:if condition="{group.description}">
+                    <f:format.html>{group.description}</f:format.html>
+                </f:if>
+            </div>
+            <f:if condition="{group.cookies}">
+                <f:for each="{group.cookies}" as="cookie" iteration="j">
+                    <div class="cookie-panel__group__cookie">
+                        <f:if condition="{cookie.name}">
+                            <h5>{cookie.name}</h5>
+                        </f:if>
+                        <f:if condition="{cookie.description}">
+                            <f:format.html>{cookie.description}</f:format.html>
+                        </f:if>
+                        <f:if condition="{cookie.lifetime}">
+                            <hr>
+                            <b><f:translate key="tx_omcookiemanager.fe.info.lifetime" extensionName="om_cookie_manager" />:</b> {cookie.lifetime}
+                        </f:if>
+                    </div>
+                </f:for>
+            </f:if>
+        </div>
+    </f:for>
+
+</form>
+</html>

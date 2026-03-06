@@ -4,6 +4,7 @@
 CREATE TABLE tx_omcookiemanager_domain_model_cookie (
 	cookiegroup int(11) unsigned DEFAULT '0' NOT NULL,
 
+    title varchar(255) DEFAULT '' NOT NULL,
 	name varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	lifetime varchar(255) DEFAULT '' NOT NULL,
@@ -17,12 +18,15 @@ CREATE TABLE tx_omcookiemanager_domain_model_cookie (
 # Table structure for table 'tx_omcookiemanager_domain_model_cookiegroup'
 #
 CREATE TABLE tx_omcookiemanager_domain_model_cookiegroup (
+	title varchar(255) DEFAULT '' NOT NULL,
 	name varchar(255) DEFAULT '' NOT NULL,
 	gtm_event_name varchar(255) DEFAULT '' NOT NULL,
 	description text,
 	essential smallint(5) unsigned DEFAULT '0' NOT NULL,
 	cookies int(11) unsigned DEFAULT '0' NOT NULL,
+    existing_cookies varchar(1024) DEFAULT '' NOT NULL,
     gtm_consent_grps varchar(1024) DEFAULT '' NOT NULL,
+    keywords varchar(1024) DEFAULT '' NOT NULL,
 );
 
 #
@@ -36,12 +40,15 @@ CREATE TABLE tx_omcookiemanager_domain_model_cookiepanel (
     link_legal_notice varchar(255) DEFAULT '' NOT NULL,
     link_legal_notice_text varchar(255) DEFAULT '' NOT NULL,
 	groups varchar(1024) DEFAULT '' NOT NULL,
+    position smallint(5) unsigned DEFAULT '0' NOT NULL,
+    layout smallint(5) unsigned DEFAULT '0' NOT NULL,
 );
 
 #
 # Table structure for table 'tx_omcookiemanager_domain_model_cookiehtml'
 #
 CREATE TABLE tx_omcookiemanager_domain_model_cookiehtml (
+    name varchar(255) DEFAULT '' NOT NULL,
     cookie int(11) unsigned DEFAULT '0' NOT NULL,
     html text,
     insert_place int(11) DEFAULT '0' NOT NULL,

@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
+	<file source-language="en" target-language="bg" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2026-03-02T12:05:01Z" product-name="om_cookie_manager">
 		<header/>
 		<body>
             <trans-unit id="tx_omcookiemanager.fe.fallback_description" resname="tx_omcookiemanager.fe.fallback_description">
-                <source>We use cookies to personalize content and ads, integrate social media, and analyze traffic to our website. We share information about your use of our website with our partners. Our partners use this information together with other data you have provided to them or that they have collected while you use their services.</source>
+                <target>Ние използваме бисквитки, за да персонализираме съдържанието и рекламите, да интегрираме социалните медии и да анализираме трафика към нашия уебсайт. Ние споделяме информация за Вашето ползване на нашия уебсайт с нашите партньори. Нашите партньори използват тази информация заедно с други данни, които сте им предоставили или които са събрали, докато използвате техните услуги.</target>
             </trans-unit>
 			<trans-unit id="tx_omcookiemanager.fe.privacy_policy" resname="tx_omcookiemanager.fe.cookie_info">
-                <source>Privacy policy</source>
+                <target>Политика за поверителност</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.legal_notice" resname="tx_omcookiemanager.fe.cookie_info">
-                <source>Legal notice</source>
+                <target>Правна бележка</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_accept" resname="tx_omcookiemanager.fe.cookie_save">
-                <source>Accept all</source>
+                <target>Приеми всички</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_save" resname="tx_omcookiemanager.fe.cookie_save">
-                <source>Save and Close</source>
+                <target>Запази и затвори</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_essential" resname="tx_omcookiemanager.fe.cookie_essential">
-                <source>Accept only essential</source>
+                <target>Приемайте само най-необходимото</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.header" resname="tx_omcookiemanager.fe.info.header">
-                <source>Cookie overview</source>
+                <target>Общ преглед на бисквитките</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.name" resname="tx_omcookiemanager.fe.info.name">
-                <source>Name</source>
+                <target>Име</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.description" resname="tx_omcookiemanager.fe.info.description">
-                <source>Descr.</source>
+                <target>Описание</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.lifetime" resname="tx_omcookiemanager.fe.info.lifetime">
-                <source>Lifetime</source>
+                <target>Продължителност на живота</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.provider" resname="tx_omcookiemanager.fe.info.provider">
-                <source>Provider</source>
+                <target>Доставчик</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.group" resname="tx_omcookiemanager.fe.info.group">
-                <source>Group</source>
+                <target>Група</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.settings-open" resname="tx_omcookiemanager.fe.info.settings-open">
-                <source>Open cookie settings</source>
+                <target>Отвори настройките за бисквитките</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.tabs.consent" resname="tx_omcookiemanager.fe.tabs.consent">
-                <source>Consent</source>
+                <target>Съгласие</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.tabs.details" resname="tx_omcookiemanager.fe.tabs.details">
-                <source>Details</source>
+                <target>Подробности</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.consent_solution" resname="tx_omcookiemanager.fe.consent_solution">
-                <source>Consent solution</source>
+                <target>Consent solution</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.be.constants.cat" resname="tx_omcookiemanager.be.constants.cat">
-                <source>OM Cookie Consent Manager</source>
+                <target>OM Cookie Consent Manager</target>
             </trans-unit>
 		</body>
 	</file>

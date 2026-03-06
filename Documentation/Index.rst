@@ -73,5 +73,10 @@ Documentation and Setup tutorial
 *********************************
 You can find all what you need under:` <https://olli-machts.de/en/extension/cookie-manager>`_
 
-The changelog is written down in the readme.
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   Sitemap
+   Changelog
 
