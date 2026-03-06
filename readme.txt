@@ -46,6 +46,19 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 **12.1.1**
 - [Compatibility] improve TCA compatibility. Thanks to dbtisch-no for contribution
 - [Compatibility] improve compatibility with CSP. Thanks to Michael Grundkötter for contribution
+**12.2.0**
+- [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
+- [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
+- [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
+**12.3.0**
+- [FEATURE] Added internal titles for Cookie, CookieGroup, and CookieHtml to facilitate management in the backend for multi-site instances.
+- [FEATURE] New positioning options for the cookie panel: Choose between Standard (fixed at the bottom) and Centered.
+- [FEATURE] New layout system for the cookie panel: Choose between standard view or a new tab-based view (consent, details).
+- [FEATURE] Support for keywords in cookie groups. Allows script tags to be loaded via the attribute. `data-consent-keyword`. (e.g. `<script type='text/example' data-consent-keyword='keywordname' />`)
+- [FEATURE] Accessibility improvements: Added WAI-ARIA support (roles, modal, labels) and improved focus management for the cookie panel.
+- [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
+- [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
+- [TASK] Update of the TCA for improved user guidance in the backend.
 **13.0.0**
 - [TASK] TYPO3 13 compatibility. Thanks to Mohsin Kahn for the big contribution.
 **13.1.0**

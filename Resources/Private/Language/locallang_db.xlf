@@ -9,6 +9,9 @@
 			<trans-unit id="tx_omcookiemanager_domain_model_cookie.name" resname="tx_omcookiemanager_domain_model_cookie.name">
 				<source>Name</source>
 			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookie.title" resname="tx_omcookiemanager_domain_model_cookie.title">
+				<source>Name (for internal use only)</source>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookie.description" resname="tx_omcookiemanager_domain_model_cookie.description">
 				<source>Description</source>
 			</trans-unit>
@@ -27,11 +30,17 @@
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup" resname="tx_omcookiemanager_domain_model_cookiegroup">
 				<source>Cookie Group</source>
 			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.tab.cookies" resname="tx_omcookiemanager_domain_model_cookiegroup.tab.cookies">
+				<source>Cookies</source>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.tab.google" resname="tx_omcookiemanager_domain_model_cookiegroup.tab.google">
 				<source>Google (GTM)</source>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.name" resname="tx_omcookiemanager_domain_model_cookiegroup.name">
 				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.title" resname="tx_omcookiemanager_domain_model_cookiegroup.title">
+				<source>Name (for internal use only)</source>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.description" resname="tx_omcookiemanager_domain_model_cookiegroup.description">
 				<source>Description</source>
@@ -42,11 +51,38 @@
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.cookies" resname="tx_omcookiemanager_domain_model_cookiegroup.cookies">
 				<source>Cookies</source>
 			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.existing_cookies" resname="tx_omcookiemanager_domain_model_cookiegroup.existing_cookies">
+				<source>existing Cookies</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.keywords" resname="tx_omcookiemanager_domain_model_cookiegroup.keywords">
+				<source>Keywords</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.keywords.description" resname="tx_omcookiemanager_domain_model_cookiegroup.keywords">
+				<source>The script tags defined in the template that are listed with “data-consent-keyword=keywordname” are loaded.</source>
+			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel" resname="tx_omcookiemanager_domain_model_cookiepanel">
 				<source>Cookie Panel</source>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.name" resname="tx_omcookiemanager_domain_model_cookiepanel.name">
 				<source>Name (the header of the cookie optin panel)</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.position" resname="tx_omcookiemanager_domain_model_cookiepanel.position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.position.items.0" resname="tx_omcookiemanager_domain_model_cookiepanel.position.items.0">
+				<source>Default (fixed at the page footer)</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.position.items.1" resname="tx_omcookiemanager_domain_model_cookiepanel.position.items.1">
+				<source>Centered on page</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.layout" resname="tx_omcookiemanager_domain_model_cookiepanel.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.layout.items.0" resname="tx_omcookiemanager_domain_model_cookiepanel.layout.items.0">
+				<source>Default (Simple Description + Cookie selection)</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.layout.items.1" resname="tx_omcookiemanager_domain_model_cookiepanel.layout.items.1">
+				<source>Tab Selection: Description and Selection; Cookie Details; Note Text</source>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiepanel.description" resname="tx_omcookiemanager_domain_model_cookiepanel.description">
 				<source>Description (this is shown in the information table/view)</source>
@@ -87,6 +123,12 @@
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml" resname="tx_omcookiemanager_domain_model_cookiehtml">
 				<source>Cookie HTML</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml.name" resname="tx_omcookiemanager_domain_model_cookiehtml.name">
+				<source>Name (for internal use only)</source>
+			</trans-unit>
+			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml.name.description" resname="tx_omcookiemanager_domain_model_cookiehtml.name.description">
+				<source>This is useful for localized or multisite instances that access identical cookies.</source>
 			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiehtml.html" resname="tx_omcookiemanager_domain_model_cookiehtml.html">
 				<source>HTML (place here your script tags. Dont use plain javascript without script tag)</source>

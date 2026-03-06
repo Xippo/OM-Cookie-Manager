@@ -2,63 +2,52 @@
 	<f:layout name="Default" />
 
 	<f:section name="content">
-		<div class="om-cookie-panel" data-omcookie-panel="1" data-omcookie-panel-suppress="{f:if(condition: suppressPanel, then:1, else:0)}">
-			<h3>{cookiePanel.name}</h3>
-			<div class="cookie-panel__selection">
-				<form>
-					<f:for as="cookiegroup" each="{cookieGroups}">
-						<div class="cookie-panel__checkbox-wrap">
-							<input class="cookie-panel__checkbox {f:if(condition:cookiegroup.essential,then:'cookie-panel__checkbox--state-inactiv',else:'')}" data-omcookie-panel-grp="1" id="group-{cookiegroup.uid}" type="checkbox" {f:if(condition:cookiegroup.essential,then:'checked data-omcookie-panel-essential="1" disabled="disabled"',else:'')} value="group-{cookiegroup.uid}" />
-							<label for="group-{cookiegroup.uid}">{cookiegroup.name}</label>
-						</div>
-					</f:for>
-				</form>
-			</div>
-			<div class="cookie-panel__description">
-				<f:format.html>{cookiePanel.description}</f:format.html>
-			</div>
-			<div class="cookie-panel__control">
-				<button data-omcookie-panel-save="all" class="cookie-panel__button cookie-panel__button--color--green"><f:translate key="tx_omcookiemanager.fe.cookie_accept"/></button>
-				<f:if condition="{essential}">
-					<button data-omcookie-panel-save="min" class="cookie-panel__button"><f:translate key="tx_omcookiemanager.fe.cookie_essential"/></button>
-				</f:if>
-				<button data-omcookie-panel-save="save" class="cookie-panel__button"><f:translate key="tx_omcookiemanager.fe.cookie_save"/></button>
-			</div>
-			<f:if condition="{cookiePanel.linkLegalNotice} || {cookiePanel.link}">
-				<div class="cookie-panel__links">
-					<f:if condition="{cookiePanel.linkLegalNotice}">
-						<div class="cookie-panel__link">
-							<f:link.typolink parameter="{cookiePanel.linkLegalNotice}">
-								<f:if condition="{cookiePanel.linkLegalNoticeText}">
-									<f:then>
-										{cookiePanel.linkLegalNoticeText}
-									</f:then>
-									<f:else>
-										<f:translate key="tx_omcookiemanager.fe.legal_notice"/>
-									</f:else>
-								</f:if>
-							</f:link.typolink>
-						</div>
-					</f:if>
-					<f:if condition="{cookiePanel.link}">
-						<div class="cookie-panel__link">
-							<f:link.typolink parameter="{cookiePanel.link}">
-								<f:if condition="{cookiePanel.linkText}">
-									<f:then>
-										{cookiePanel.linkText}
-									</f:then>
-									<f:else>
-										<f:translate key="tx_omcookiemanager.fe.privacy_policy"/>
-									</f:else>
-								</f:if>
-							</f:link.typolink>
-						</div>
-					</f:if>
-				</div>
-			</f:if>
+		<f:variable name="panelClass" value="om-cookie-panel" />
+		<f:if condition="{cookiePanel.position}">
+			<f:variable name="panelClass" value="{panelClass} om-cookie-panel-position-{cookiePanel.position}" />
+		</f:if>
+		<f:if condition="{cookiePanel.layout}">
+			<f:variable name="panelClass" value="{panelClass} om-cookie-panel-layout-{cookiePanel.layout}" />
+		</f:if>
+		<div class="{panelClass}" tabindex="-1" data-omcookie-panel="1" data-omcookie-panel-suppress="{f:if(condition: suppressPanel, then:1, else:0)}" role="dialog" aria-modal="true" aria-labelledby="om-cookie-panel__title" aria-describedby="om-cookie-panel__description">
 			<div class="cookie-panel__attribution">
-				<f:link.typolink target="_blank" parameter="https://olli-machts.de">Cookie optin by Olli machts</f:link.typolink>
+				<f:link.typolink target="_blank"
+								 additionalAttributes="{tabindex:'-1'}"
+								 parameter="https://olli-machts.de">
+					<span><f:translate key="tx_omcookiemanager.fe.consent_solution" extensionName="om_cookie_manager" /></span>
+					<small> by Olli machts</small>
+				</f:link.typolink>
 			</div>
+			<f:switch expression="{cookiePanel.layout}">
+				<f:case value="1">
+					<f:comment><!-- Tab Switch view --></f:comment>
+					<div class="om-cookie-panel__tabswitch">
+						<nav class="om-cookie-panel__tabswitch-btngroup">
+							<ul>
+								<li>
+									<button data-omcookie-panel-target="selection" class="active"><f:translate key="tx_omcookiemanager.fe.tabs.consent" extensionName="om_cookie_manager" /></button>
+								</li>
+								<li>
+									<button data-omcookie-panel-target="info"><f:translate key="tx_omcookiemanager.fe.tabs.details" extensionName="om_cookie_manager" /></button>
+								</li>
+							</ul>
+						</nav>
+						<div class="om-cookie-panel__tabswitch-content">
+							<div class="om-cookie-panel__tab" data-omcookie-panel-tab="selection">
+								<f:render partial="CookiePanel/PanelSelection" arguments="{_all}" />
+							</div>
+							<div class="om-cookie-panel__tab tab-hidden" data-omcookie-panel-tab="info">
+								<f:render partial="CookiePanel/CookieInfo" arguments="{settings:settings, cookieGroups:cookieGroups}" />
+							</div>
+						</div>
+					</div>
+					<f:render partial="CookiePanel/ControlButtons" arguments="{_all}"/>
+				</f:case>
+				<f:defaultCase>
+					<f:comment><!-- Default view with Cookie Selection Only --></f:comment>
+					<f:render partial="CookiePanel/PanelSelection" arguments="{_all}" />
+				</f:defaultCase>
+			</f:switch>
 		</div>
 	</f:section>
 </html>

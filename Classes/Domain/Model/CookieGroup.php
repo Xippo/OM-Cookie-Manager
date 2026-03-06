@@ -19,6 +19,13 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * title
+     *
+     * @var string
+     */
+    protected $title = '';
+
+    /**
      * name
      *
      * @var string
@@ -63,6 +70,20 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $cookies = null;
 
     /**
+     * existing cookies
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie>
+     */
+    protected $existingCookies = null;
+
+    /**
+     * keywords
+     *
+     * @var string
+     */
+    protected $keywords = '';
+
+    /**
      * __construct
      */
     public function __construct()
@@ -83,6 +104,27 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected function initStorageObjects()
     {
         $this->cookies = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+
+    /**
+     * Returns the title
+     *
+     * @return string $title
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
+    /**
+     * Sets the title
+     *
+     * @param string $title
+     * @return void
+     */
+    public function setTitle(string $title): void
+    {
+        $this->title = $title;
     }
 
     /**
@@ -231,5 +273,25 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setGtmConsentGrps(string $gtmConsentGrps): void
     {
         $this->gtmConsentGrps = $gtmConsentGrps;
+    }
+
+    public function getExistingCookies(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    {
+        return $this->existingCookies;
+    }
+
+    public function setExistingCookies(?\TYPO3\CMS\Extbase\Persistence\ObjectStorage $existingCookies): void
+    {
+        $this->existingCookies = $existingCookies;
+    }
+
+    public function getKeywords(): string
+    {
+        return $this->keywords;
+    }
+
+    public function setKeywords(string $keywords): void
+    {
+        $this->keywords = $keywords;
     }
 }

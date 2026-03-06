@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
+	<file source-language="en" target-language="hu" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2026-03-02T12:05:01Z" product-name="om_cookie_manager">
 		<header/>
 		<body>
             <trans-unit id="tx_omcookiemanager.fe.fallback_description" resname="tx_omcookiemanager.fe.fallback_description">
-                <source>We use cookies to personalize content and ads, integrate social media, and analyze traffic to our website. We share information about your use of our website with our partners. Our partners use this information together with other data you have provided to them or that they have collected while you use their services.</source>
+                <target>Cookie-kat használunk a tartalom és a hirdetések személyre szabásához, a közösségi média integrálásához és weboldalunk forgalmának elemzéséhez. Megosztjuk partnereinkkel az Ön weboldalunk használatával kapcsolatos információkat. Partnereink ezeket az információkat az Ön által nekik megadott vagy az Ön által a szolgáltatásuk használata során általuk gyűjtött egyéb adatokkal együtt használják fel.</target>
             </trans-unit>
 			<trans-unit id="tx_omcookiemanager.fe.privacy_policy" resname="tx_omcookiemanager.fe.cookie_info">
-                <source>Privacy policy</source>
+                <target>Adatvédelmi irányelvek</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.legal_notice" resname="tx_omcookiemanager.fe.cookie_info">
-                <source>Legal notice</source>
+                <target>Jogi nyilatkozat</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_accept" resname="tx_omcookiemanager.fe.cookie_save">
-                <source>Accept all</source>
+                <target>Mindent elfogadok</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_save" resname="tx_omcookiemanager.fe.cookie_save">
-                <source>Save and Close</source>
+                <target>Mentés és bezárás</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.cookie_essential" resname="tx_omcookiemanager.fe.cookie_essential">
-                <source>Accept only essential</source>
+                <target>Csak a legszükségesebbet fogadja el</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.header" resname="tx_omcookiemanager.fe.info.header">
-                <source>Cookie overview</source>
+                <target>A cookie-k áttekintése</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.name" resname="tx_omcookiemanager.fe.info.name">
-                <source>Name</source>
+                <target>Név</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.description" resname="tx_omcookiemanager.fe.info.description">
-                <source>Descr.</source>
+                <target>Leírás</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.lifetime" resname="tx_omcookiemanager.fe.info.lifetime">
-                <source>Lifetime</source>
+                <target>Élettartam</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.provider" resname="tx_omcookiemanager.fe.info.provider">
-                <source>Provider</source>
+                <target>Szolgáltató</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.group" resname="tx_omcookiemanager.fe.info.group">
-                <source>Group</source>
+                <target>Csoport</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.info.settings-open" resname="tx_omcookiemanager.fe.info.settings-open">
-                <source>Open cookie settings</source>
+                <target>Cookie-beállítások megnyitása</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.tabs.consent" resname="tx_omcookiemanager.fe.tabs.consent">
-                <source>Consent</source>
+                <target>Hozzájárulás</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.tabs.details" resname="tx_omcookiemanager.fe.tabs.details">
-                <source>Details</source>
+                <target>Részletek</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.consent_solution" resname="tx_omcookiemanager.fe.consent_solution">
-                <source>Consent solution</source>
+                <target>Consent solution</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.be.constants.cat" resname="tx_omcookiemanager.be.constants.cat">
-                <source>OM Cookie Consent Manager</source>
+                <target>OM Cookie Consent Manager</target>
             </trans-unit>
 		</body>
 	</file>
