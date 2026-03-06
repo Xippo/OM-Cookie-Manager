@@ -1,19 +1,28 @@
 mod {
-        wizards.newContentElement.wizardItems.plugins {
-            elements {
-                main {
-                    iconIdentifier = om_cookie_manager-plugin-main
-                    title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name
-                    description = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.description
-                    tt_content_defValues {
-                        CType = omcookiemanager_main
-                    }
+    wizards.newContentElement.wizardItems.plugins {
+        elements {
+            main {
+                iconIdentifier = om_cookie_manager-plugin-main
+                title = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.name
+                description = LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_om_cookie_manager_main.description
+                tt_content_defValues {
+                    CType = omcookiemanager_main
                 }
             }
-            show = *
         }
-        web_list.hideTables = tx_omcookiemanager_domain_model_cookie,tx_omcookiemanager_domain_model_cookiehtml
-        web_list.deniedNewTables = tx_omcookiemanager_domain_model_cookie,tx_omcookiemanager_domain_model_cookiehtml
-   }
+        show = *
+    }
+    web_list.hideTables = tx_omcookiemanager_domain_model_cookie,tx_omcookiemanager_domain_model_cookiehtml
+    web_list.deniedNewTables = tx_omcookiemanager_domain_model_cookie,tx_omcookiemanager_domain_model_cookiehtml
+}
 
+// page module conditions
+[traverse(page, "module") == "omCookieManager"]
+    mod.web_list.allowedNewTables = tx_omcookiemanager_domain_model_cookiegroup, tx_omcookiemanager_domain_model_cookiehtml, tx_omcookiemanager_domain_model_cookiepanel
+    mod.web_list.hideTables = tx_omcookiemanager_domain_model_cookie, tx_omcookiemanager_domain_model_cookiehtml
+[global]
 
+[traverse(page, "module") == "omCookieManager_Groups"]
+    mod.web_list.allowedNewTables = tx_omcookiemanager_domain_model_cookiegroup, tx_omcookiemanager_domain_model_cookie
+    mod.web_list.hideTables = tx_omcookiemanager_domain_model_cookiehtml
+[global]
