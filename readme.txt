@@ -65,6 +65,15 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
 - [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
 - [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
+**13.2.0**
+- [FEATURE] Added internal titles for Cookie, CookieGroup, and CookieHtml to facilitate management in the backend for multi-site instances.
+- [FEATURE] New positioning options for the cookie panel: Choose between Standard (fixed at the bottom) and Centered.
+- [FEATURE] New layout system for the cookie panel: Choose between standard view or a new tab-based view (consent, details).
+- [FEATURE] Support for keywords in cookie groups. Allows script tags to be loaded via the attribute. `data-consent-keyword`. (e.g. `<script type='text/example' data-consent-keyword='keywordname' />`)
+- [FEATURE] Accessibility improvements: Added WAI-ARIA support (roles, modal, labels) and improved focus management for the cookie panel.
+- [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
+- [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
+- [TASK] Update of the TCA for improved user guidance in the backend.
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
