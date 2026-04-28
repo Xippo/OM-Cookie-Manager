@@ -18,22 +18,29 @@
             </div>
             <f:if condition="{group.cookies}">
                 <f:for each="{group.cookies}" as="cookie" iteration="j">
-                    <div class="cookie-panel__group__cookie">
-                        <f:if condition="{cookie.name}">
-                            <h5>{cookie.name}</h5>
-                        </f:if>
-                        <f:if condition="{cookie.description}">
-                            <f:format.html>{cookie.description}</f:format.html>
-                        </f:if>
-                        <f:if condition="{cookie.lifetime}">
-                            <hr>
-                            <b><f:translate key="tx_omcookiemanager.fe.info.lifetime" extensionName="om_cookie_manager" />:</b> {cookie.lifetime}
-                        </f:if>
-                    </div>
+                    <f:render section="renderCookies" arguments="{_all}" />
+                </f:for>
+            </f:if>
+            <f:if condition="{group.existingCookies}">
+                <f:for each="{group.existingCookies}" as="cookie" iteration="j">
+                    <f:render section="renderCookies" arguments="{_all}" />
                 </f:for>
             </f:if>
         </div>
     </f:for>
-
 </form>
+<f:section name="renderCookie">
+    <div class="cookie-panel__group__cookie">
+        <f:if condition="{cookie.name}">
+            <h5>{cookie.name}</h5>
+        </f:if>
+        <f:if condition="{cookie.description}">
+            <f:format.html>{cookie.description}</f:format.html>
+        </f:if>
+        <f:if condition="{cookie.lifetime}">
+            <hr>
+            <b><f:translate key="tx_omcookiemanager.fe.info.lifetime" extensionName="om_cookie_manager" />:</b> {cookie.lifetime}
+        </f:if>
+    </div>
+</f:section>
 </html>
