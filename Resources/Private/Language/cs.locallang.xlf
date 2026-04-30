@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="cz" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2026-03-02T12:05:01Z" product-name="om_cookie_manager">
+	<file source-language="en" target-language="cs" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2026-03-02T12:05:01Z" product-name="om_cookie_manager">
 		<header/>
 		<body>
             <trans-unit id="tx_omcookiemanager.fe.fallback_description" resname="tx_omcookiemanager.fe.fallback_description">
