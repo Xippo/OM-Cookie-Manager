@@ -154,10 +154,12 @@ var pushGtmEvents = function (events) {
 };
 
 var omPushGtmConsentModeGrpsEvents = function (groups) {
-    groupsObject = {};
-    groups.forEach((value) => {
-        groupsObject[value] = 'granted';
-    });
+    let groupsObject = {};
+    if (typeof groups === 'undefined') {
+        groups.forEach((value) => {
+            groupsObject[value] = 'granted';
+        });
+    }
     if(Object.keys(groupsObject).length > 0){
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
