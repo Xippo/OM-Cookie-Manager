@@ -19,8 +19,15 @@ class CookieHtml extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
+     * name
+     *
+     * @var string
+     */
+    protected $name = '';
+
+    /**
      * html
-     * 
+     *
      * @var string
      */
     protected $html = '';
@@ -31,6 +38,16 @@ class CookieHtml extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      */
     protected $insertPlace = 0;
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
 
     /**
      * Returns the html

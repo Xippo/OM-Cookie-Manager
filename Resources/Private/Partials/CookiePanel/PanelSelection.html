@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div class="om-cookie-panel__tab-content">
+        <h3 id="om-cookie-panel__title">{cookiePanel.name}</h3>
+        <div class="cookie-panel__description" id="om-cookie-panel__description">
+            <f:if condition="{cookiePanel.description}">
+                <f:then>
+                    <f:format.html>{cookiePanel.description}</f:format.html>
+                </f:then>
+                <f:else><f:format.html><f:translate key="tx_omcookiemanager.fe.fallback_description" extensionName="om_cookie_manager" /></f:format.html></f:else>
+            </f:if>
+        </div>
+
+        <f:if condition="{cookiePanel.layout} != 1">
+            <f:render partial="CookiePanel/ControlButtons" arguments="{_all}"/>
+        </f:if>
+        <f:if condition="{cookiePanel.linkLegalNotice} || {cookiePanel.link}">
+            <div class="cookie-panel__links">
+                <f:if condition="{cookiePanel.linkLegalNotice}">
+                    <div class="cookie-panel__link">
+                        <f:link.typolink parameter="{cookiePanel.linkLegalNotice}">
+                            <f:if condition="{cookiePanel.linkLegalNoticeText}">
+                                <f:then>
+                                    {cookiePanel.linkLegalNoticeText}
+                                </f:then>
+                                <f:else>
+                                    <f:translate key="tx_omcookiemanager.fe.legal_notice"/>
+                                </f:else>
+                            </f:if>
+                        </f:link.typolink>
+                    </div>
+                </f:if>
+                <f:if condition="{cookiePanel.link}">
+                    <div class="cookie-panel__link">
+                        <f:link.typolink parameter="{cookiePanel.link}">
+                            <f:if condition="{cookiePanel.linkText}">
+                                <f:then>
+                                    {cookiePanel.linkText}
+                                </f:then>
+                                <f:else>
+                                    <f:translate key="tx_omcookiemanager.fe.privacy_policy"/>
+                                </f:else>
+                            </f:if>
+                        </f:link.typolink>
+                    </div>
+                </f:if>
+            </div>
+        </f:if>
+    </div>
+    <div class="cookie-panel__selection">
+        <form>
+            <f:for as="cookiegroup" each="{cookieGroups}">
+                <div class="cookie-panel__checkbox-wrap">
+                    <input class="cookie-panel__checkbox {f:if(condition:cookiegroup.essential,then:'cookie-panel__checkbox--state-inactiv',else:'')}" data-omcookie-panel-grp="1" id="group-{cookiegroup.uid}" type="checkbox" {f:if(condition:cookiegroup.essential,then:'checked data-omcookie-panel-essential="1" disabled="disabled"',else:'')} value="group-{cookiegroup.uid}" />
+                    <label for="group-{cookiegroup.uid}">
+                        <span>{cookiegroup.name}</span>
+                        <span class="checkbox-toggle"></span>
+                    </label>
+                </div>
+            </f:for>
+        </form>
+    </div>
+</html>

@@ -1,8 +1,12 @@
 <?php
+
+use OM\OmCookieManager\Tca\ItemsProcFunc\CookieItemsProcFunc;
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup',
-        'label' => 'name',
+        'label' => 'title',
+        'label_alt' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -20,8 +24,13 @@ return [
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_grp.svg'
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, essential, cookies,
-        --div--;LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.tab.google,gtm_event_name,gtm_consent_grps'],
+        '1' => [
+            'showitem' => '
+                    sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, name, description,
+                    --div--;LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.tab.cookies, essential, keywords, existing_cookies, cookies,
+                    --div--;LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.tab.google, gtm_event_name, gtm_consent_grps
+                '
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -103,6 +112,15 @@ return [
             ],
         ],
 
+        'title' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.title',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
         'name' => [
             'exclude' => true,
             'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.name',
@@ -159,12 +177,34 @@ return [
                 'foreign_field' => 'cookiegroup',
                 'maxitems' => 9999,
                 'appearance' => [
-                    'collapseAll' => 0,
+                    'collapseAll' => 1,
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
                     'showAllLocalizationLink' => 1
                 ],
+            ],
+        ],
+        'existing_cookies' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.existing_cookies',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'itemsProcFunc' => CookieItemsProcFunc::class . '->existingCookiesItems',
+                'maxitems' => 9999,
+            ],
+        ],
+        'keywords' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.keywords',
+            'description' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiegroup.keywords.description',
+            'config' => [
+                'type' => 'text',
+                'cols' => 30,
+                'rows' => 5,
+                'eval' => 'trim',
+                'placeholder' => 'keywordname,keywordname2',
             ],
 
         ],

@@ -19,8 +19,21 @@ return [
         'searchFields' => 'name,description,link',
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_panel_icon.svg'
     ],
+    'palettes' => [
+        'link' => ['showitem' => 'link, link_text'],
+        'link_legal_notice' => ['showitem' => 'link_legal_notice, link_legal_notice_text'],
+    ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, link, link_text, link_legal_notice, link_legal_notice_text, groups'],
+        '1' => [
+            'showitem' => '
+                    hidden, name, description, 
+                    --palette--;;link, 
+                    --palette--;;link_legal_notice, 
+                    groups,
+                    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, layout, position,
+                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource,
+                ',
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -175,7 +188,43 @@ return [
                 'maxitems' => 99,
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_omcookiemanager_domain_model_cookiegroup',
-                'foreign_table_where' => 'AND tx_omcookiemanager_domain_model_cookiegroup.sys_language_uid = ###REC_FIELD_sys_language_uid###',
+                'foreign_table_where' => 'AND tx_omcookiemanager_domain_model_cookiegroup.sys_language_uid = ###REC_FIELD_sys_language_uid### OR tx_omcookiemanager_domain_model_cookiegroup.sys_language_uid = -1',
+            ],
+        ],
+        'position' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.position',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.position.items.0',
+                        'value' => 0,
+                    ],
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.position.items.1',
+                        'value' => 1,
+                    ],
+                ],
+            ],
+        ],
+        'layout' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.layout',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.layout.items.0',
+                        'value' => 0,
+                    ],
+                    [
+                        'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.layout.items.1',
+                        'value' => 1,
+                    ],
+                ],
             ],
         ],
     ],
