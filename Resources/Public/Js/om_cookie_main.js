@@ -209,7 +209,7 @@ var omCookieEnableCookieGrp = function (groupKey){
                         if (!newScript.getAttribute('nonce')) {
                             var siteNonceEl = document.querySelector('script[nonce]');
                             if (siteNonceEl) {
-                                var siteNonce = siteNonceEl.getAttribute('nonce');
+                                var siteNonce = siteNonceEl ? nonceSource.nonce : null;
                                 if (siteNonce) {
                                     newScript.setAttribute('nonce', siteNonce);
                                 }
