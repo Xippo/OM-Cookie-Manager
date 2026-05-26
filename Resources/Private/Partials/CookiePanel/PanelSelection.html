@@ -9,8 +9,8 @@
                 <f:else><f:format.html><f:translate key="tx_omcookiemanager.fe.fallback_description" extensionName="om_cookie_manager" /></f:format.html></f:else>
             </f:if>
         </div>
-
         <f:if condition="{cookiePanel.layout} != 1">
+            <f:render section="Groups" arguments="{_all}" />
             <f:render partial="CookiePanel/ControlButtons" arguments="{_all}"/>
         </f:if>
         <f:if condition="{cookiePanel.linkLegalNotice} || {cookiePanel.link}">
@@ -46,6 +46,11 @@
             </div>
         </f:if>
     </div>
+    <f:if condition="{cookiePanel.layout} == 1">
+        <f:render section="Groups" arguments="{_all}" />
+    </f:if>
+
+<f:section name="Groups">
     <div class="cookie-panel__selection">
         <form>
             <f:for as="cookiegroup" each="{cookieGroups}">
@@ -59,4 +64,5 @@
             </f:for>
         </form>
     </div>
+</f:section>
 </html>
