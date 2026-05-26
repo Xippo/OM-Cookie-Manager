@@ -2,9 +2,11 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookie',
-        'label' => 'name',
+        'label' => 'title',
+        'label_alt' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
+        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -19,7 +21,7 @@ return [
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/Extension.svg'
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, description, lifetime, provider, cookie_group, cookie_html'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, name, description, lifetime, provider, cookie_group, cookie_html'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -104,6 +106,15 @@ return [
                 'size' => 30,
                 'eval' => 'trim',
                 'required' => true
+            ],
+        ],
+        'title' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookie.title',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
             ],
         ],
         'description' => [

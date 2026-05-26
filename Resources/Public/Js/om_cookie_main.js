@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
         //timeout, so the user can see the page before he get the nice cookie panel
         setTimeout(function () {
             omCookiePanel.classList.toggle('active');
+            omCookiePanel.querySelectorAll('button, [href]:not([tabindex="-1"]), input, select, textarea, [tabindex]:not([tabindex="-1"])')[0].focus();
         },1000);
     }
 
@@ -67,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function(){
         openButtons[i].addEventListener('click', function (event) {
 			event.preventDefault();
             omCookiePanel.classList.toggle('active');
+            omCookiePanel.querySelectorAll('button, [href]:not([tabindex="-1"]), input, select, textarea, [tabindex]:not([tabindex="-1"])')[0].focus();
         }, false);
     }
 
@@ -152,10 +154,12 @@ var pushGtmEvents = function (events) {
 };
 
 var omPushGtmConsentModeGrpsEvents = function (groups) {
-    groupsObject = {};
-    groups.forEach((value) => {
-        groupsObject[value] = 'granted';
-    });
+    let groupsObject = {};
+    if (typeof groups === 'undefined') {
+        groups.forEach((value) => {
+            groupsObject[value] = 'granted';
+        });
+    }
     if(Object.keys(groupsObject).length > 0){
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -183,6 +187,28 @@ var omCookieEnableCookieGrp = function (groupKey){
                     });
                     omGtmConsentModeGrantedGrps.push();
                 }
+                continue;
+            }
+            if(key === 'keywords'){
+                obj.forEach((value) => {
+                    const val = value.replace(' ', '');
+                    document.querySelectorAll(`[data-consent-keyword="${val}"]`).forEach(function (script) {
+                        const newScript = document.createElement('script');
+                        // transfer attributes
+                        for (let i = 0; i < script.attributes.length; i++) {
+                            const attr = script.attributes[i];
+                            if (attr.name !== 'type') {
+                                newScript.setAttribute(attr.name, attr.value);
+                            }
+                        }
+
+                        newScript.type = 'text/javascript';
+                        newScript.text = script.textContent;
+
+                        // replace old Script
+                        script.parentNode.replaceChild(newScript, script);
+                    });
+                });
                 continue;
             }
             //set the cookie html
@@ -242,3 +268,60 @@ var omCookieUtility = {
     window.CustomEvent = CustomEvent;
 })();
 
+/* tab switch view */
+if (document.querySelectorAll('.om-cookie-panel__tabswitch').length > 0) {
+    /* tab switch function */
+    const tabSwitch = document.querySelectorAll('.om-cookie-panel__tabswitch')[0];
+    const tabSwitchBtns = tabSwitch.querySelectorAll('.om-cookie-panel__tabswitch-btngroup button');
+    const tabSwitchContent = tabSwitch.querySelectorAll('.om-cookie-panel__tabswitch-content')[0];
+    tabSwitchBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            tabSwitchBtns.forEach(function (btn) {
+                btn.classList.remove('active');
+            });
+            const tabTarget = e.target.dataset['omcookiePanelTarget'];
+            e.target.classList.add('active');
+            tabSwitchContent.querySelector('.om-cookie-panel__tab:not(.tab-hidden)').classList.add('tab-hidden');
+            tabSwitchContent.querySelector('.om-cookie-panel__tab[data-omcookie-panel-tab="'+ tabTarget +'"]').classList.remove('tab-hidden');
+        });
+    });
+
+    /* accordion function for tab details */
+    if (document.querySelectorAll('.panel__group__cookie-toggle').length > 0) {
+        const cookieAccordionToggle = document.querySelectorAll('.panel__group__cookie-toggle');
+        cookieAccordionToggle.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                e.target.classList.toggle('active');
+            });
+        });
+    }
+
+    /* pairing of checkboxes in different tabs */
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(input) {
+        input.addEventListener('change', function (e) {
+            const wrapperConsent = 'cookie-panel__checkbox-wrap';
+            const wrapperInfo = 'cookie-panel__group__checkbox-container';
+
+            const consentWrap = e.target.closest(`.${wrapperConsent}`);
+            const infoWrap = e.target.closest(`.${wrapperInfo}`);
+
+            if (!consentWrap && !infoWrap) return;
+
+            const targetWrapper = consentWrap ? wrapperInfo : wrapperConsent;
+            const shouldTriggerChange = !!infoWrap;
+
+            const targetInput = document.querySelector(
+              `.${targetWrapper} input[value="${e.target.value}"]`
+            );
+
+            if (!targetInput) return;
+
+            targetInput.checked = e.target.checked;
+
+            if (shouldTriggerChange) {
+                targetInput.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+}

@@ -68,6 +68,19 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $groups = '';
 
+    /**
+     * position
+     *
+     * @var int
+     */
+    protected $position = 0;
+
+    /**
+     * layout
+     *
+     * @var int
+     */
+    protected $layout = 0;
 
 
     /**
@@ -177,6 +190,26 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setLinkLegalNoticeText(string $linkLegalNoticeText): void
     {
         $this->linkLegalNoticeText = $linkLegalNoticeText;
+    }
+
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): void
+    {
+        $this->position = $position;
+    }
+
+    public function getLayout(): int
+    {
+        return $this->layout;
+    }
+
+    public function setLayout(int $layout): void
+    {
+        $this->layout = $layout;
     }
 
 }

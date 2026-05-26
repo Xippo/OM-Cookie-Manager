@@ -3,7 +3,10 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:om_cookie_manager/Resources/Private/Language/locallang" date="2019-10-29T12:37:25Z" product-name="om_cookie_manager">
 		<header/>
 		<body>
-
+            <trans-unit id="tx_omcookiemanager.fe.fallback_description" resname="tx_omcookiemanager.fe.fallback_description">
+                <source>We use cookies to personalize content and ads, integrate social media, and analyze traffic to our website. We share information about your use of our website with our partners. Our partners use this information together with other data you have provided to them or that they have collected while you use their services.</source>
+                <target>Wir nutzen Cookies, um Inhalte und Anzeigen individuell zu gestalten, soziale Medien zu integrieren und die Zugriffe auf unsere Website zu analysieren. Wir geben Informationen über die Nutzung unserer Website an unsere Partner weiter. Unsere Partner nutzen diese Informationen zusammen mit weiteren Daten, die Sie ihnen gegeben haben oder die sie gesammelt haben, während Sie ihre Dienste nutzen.</target>
+            </trans-unit>
             <trans-unit id="tx_omcookiemanager.fe.privacy_policy" resname="tx_omcookiemanager.fe.cookie_info">
                 <source>Privacy policy</source>
                 <target>Datenschutzerklärung</target>
@@ -51,6 +54,17 @@
             <trans-unit id="tx_omcookiemanager.fe.info.settings-open" resname="tx_omcookiemanager.fe.info.settings-open">
                 <source>Open cookie settings</source>
                 <target>Cookie-Einstellungen öffnen</target>
+            </trans-unit>
+            <trans-unit id="tx_omcookiemanager.fe.tabs.consent" resname="tx_omcookiemanager.fe.tabs.consent">
+                <source>Consent</source>
+                <target>Zustimmung</target>
+            </trans-unit>
+            <trans-unit id="tx_omcookiemanager.fe.tabs.details" resname="tx_omcookiemanager.fe.tabs.details">
+                <source>Details</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="tx_omcookiemanager.fe.consent_solution" resname="tx_omcookiemanager.fe.consent_solution">
+                <target>Consent solution</target>
             </trans-unit>
             <trans-unit id="tx_omcookiemanager.be.constants.cat" resname="tx_omcookiemanager.be.constants.cat">
                 <source>OM Cookie Consent Manager</source>
