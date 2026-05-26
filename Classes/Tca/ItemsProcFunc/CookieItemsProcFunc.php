@@ -34,7 +34,6 @@ final class CookieItemsProcFunc
             ->orderBy('name', 'ASC');
 
         // Exclude cookies that are already assigned to this cookiegroup
-        DebuggerUtility::var_dump($currentUid);
         if ($currentUid > 0) {
             $queryBuilder->andWhere(
                 $queryBuilder->expr()->neq(
