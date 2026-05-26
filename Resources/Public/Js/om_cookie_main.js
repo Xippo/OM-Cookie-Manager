@@ -252,7 +252,6 @@ var omCookieEnableCookieGrp = function (groupKey){
                     var nonceSource =
                         document.querySelector('script[nonce]') ||
                         document.querySelector('[nonce]');
-                    console.log(nonceSource);
 
                     var nonce = nonceSource ? nonceSource.nonce : null;
 
