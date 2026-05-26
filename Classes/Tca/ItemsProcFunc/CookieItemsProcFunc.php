@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace OM\OmCookieManager\Tca\ItemsProcFunc;
 
 use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\ParameterType;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 final class CookieItemsProcFunc
 {
@@ -32,11 +34,12 @@ final class CookieItemsProcFunc
             ->orderBy('name', 'ASC');
 
         // Exclude cookies that are already assigned to this cookiegroup
+        DebuggerUtility::var_dump($currentUid);
         if ($currentUid > 0) {
             $queryBuilder->andWhere(
                 $queryBuilder->expr()->neq(
                     'cookiegroup',
-                    $queryBuilder->createNamedParameter($currentUid, \PDO::PARAM_INT)
+                    $queryBuilder->createNamedParameter($currentUid, ParameterType::INTEGER)
                 )
             );
         }
