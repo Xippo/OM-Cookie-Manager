@@ -72,6 +72,10 @@
     }
   }
 
+  #om-cookie-panel__title{
+    padding-top: .5em;
+  }
+
   h3,h4,h5{
     margin: 0;
   }
@@ -139,20 +143,19 @@
       display: none;
     }
     &:has(.checkbox-toggle):not(:has(.visually-hidden)) {
-      border: 1px solid;
       padding: 1em;
     }
     .checkbox-toggle{
       background: var(--om-cookie-panel-inactive-color);
       border-radius: 10rem;
       display: block;
-      height: 1.75em;
+      height: 1.5em;
       margin-left: auto;
       margin-right: auto;
       margin-top: .5em;
       position: relative;
       transition: .1s;
-      width: 3.2em;
+      width: 3em;
 
       &:first-child{
         margin-top: 0;
@@ -163,25 +166,25 @@
         border-radius: 50%;
         content: '';
         display: block;
-        height: 1.4em;
+        height: 1.2em;
         left: .19em;
         position: absolute;
         top: .2em;
         transition: .1s;
-        width: 1.4em;
+        width: 1.2em;
       }
     }
   }
   .cookie-panel__checkbox:checked+label {
     &::before {
-      box-shadow: inset 0 0 0 3px var(--om-cookie-panel-background);
+      box-shadow: inset 0 0 0 2px var(--om-cookie-panel-background);
       background-color: var(--om-cookie-panel-active-color);
     }
 
     .checkbox-toggle{
       background: var(--om-cookie-panel-active-color);
       &:before {
-        left: calc(100% - .2rem);
+        left: calc(100% - 6px);
         transform: translateX(-100%);
       }
     }
@@ -209,11 +212,16 @@
       margin-right:0;
     }
     &:focus-within {
-      box-shadow: inset 0 0 3px 0 var(--om-cookie-panel-border-color);
+      box-shadow: inset 0 0 2px 0 var(--om-cookie-panel-border-color);
     }
   }
   .cookie-panel__description{
     clear:both;
+    text-align: left;
+    p:last-child{
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
   .cookie-panel__selection {
     margin: 1.5em 0 0;
@@ -365,7 +373,8 @@
         padding-right: 1.5rem;
       }
       .cookie-panel__group__checkbox-container{
-        float: right;
+        display: flex;
+        justify-content: flex-end;
         padding: 1em 0 1em 2em;
       }
       .panel__group__cookie-toggle {
@@ -397,6 +406,7 @@
         &.active {
           &:before {
             transform: rotate(135deg);
+            margin-left: 0;
           }
           ~ .cookie-panel__group__cookie {
             display: block;
