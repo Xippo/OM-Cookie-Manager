@@ -194,7 +194,7 @@ var omCookieEnableCookieGrp = function (groupKey){
                     const val = value.replace(' ', '');
                     document.querySelectorAll(`[data-consent-keyword="${val}"]`).forEach(function (script) {
                         const newScript = document.createElement('script');
-                        // transfer attributes
+                        // transfer attributes (keep existing nonce if present)
                         for (let i = 0; i < script.attributes.length; i++) {
                             const attr = script.attributes[i];
                             if (attr.name !== 'type') {
@@ -204,6 +204,17 @@ var omCookieEnableCookieGrp = function (groupKey){
 
                         newScript.type = 'text/javascript';
                         newScript.text = script.textContent;
+
+                        // ensure CSP nonce is applied when site uses it
+                        if (!newScript.getAttribute('nonce')) {
+                            var siteNonceEl = document.querySelector('script[nonce]');
+                            if (siteNonceEl) {
+                                var siteNonce = siteNonceEl.getAttribute('nonce');
+                                if (siteNonce) {
+                                    newScript.setAttribute('nonce', siteNonce);
+                                }
+                            }
+                        }
 
                         // replace old Script
                         script.parentNode.replaceChild(newScript, script);
@@ -216,24 +227,42 @@ var omCookieEnableCookieGrp = function (groupKey){
                 // skip loop if the property is from prototype
                 if (!obj.hasOwnProperty(prop)) continue;
 
-                if(Array.isArray(obj[prop])){
+                if (Array.isArray(obj[prop])) {
                     var content = '';
                     //get the html content
                     obj[prop].forEach(function (htmlContent) {
-                        content += htmlContent
+                        content += htmlContent;
                     });
+
                     var range = document.createRange();
-                    if(prop === 'header'){
+                    var targetNode;
+                    var documentFrag;
+
+                    if (prop === 'header') {
                         // add the html to header
-                        range.selectNode(document.getElementsByTagName('head')[0]);
-                        var documentFragHead = range.createContextualFragment(content);
-                        document.getElementsByTagName('head')[0].appendChild(documentFragHead);
-                    }else{
+                        targetNode = document.getElementsByTagName('head')[0];
+                    } else {
                         //add the html to body
-                        range.selectNode(document.getElementsByTagName('body')[0]);
-                        var documentFragBody = range.createContextualFragment(content);
-                        document.getElementsByTagName('body')[0].appendChild(documentFragBody);
+                        targetNode = document.getElementsByTagName('body')[0];
                     }
+
+                    range.selectNode(targetNode);
+                    documentFrag = range.createContextualFragment(content);
+
+                    var nonceSource =
+                        document.querySelector('script[nonce]') ||
+                        document.querySelector('[nonce]');
+                    console.log(nonceSource);
+
+                    var nonce = nonceSource ? nonceSource.nonce : null;
+
+                    if (nonce) {
+                        documentFrag.querySelectorAll('script').forEach(function (scriptTag) {
+                            scriptTag.setAttribute('nonce', nonce);
+                        });
+                    }
+
+                    targetNode.appendChild(documentFrag);
                 }
             }
         }
