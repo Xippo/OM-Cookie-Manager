@@ -2,6 +2,7 @@
 namespace OM\OmCookieManager\Controller;
 
 
+use TYPO3\CMS\Core\Security\ContentSecurityPolicy\ConsumableNonce;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use OM\OmCookieManager\Domain\Repository\CookiePanelRepository;
 use OM\OmCookieManager\Domain\Repository\CookieGroupRepository;
@@ -11,7 +12,7 @@ use OM\OmCookieManager\Domain\Model\CookieGroup;
 use OM\OmCookieManager\Domain\Model\CookiePanel;
 use TYPO3\CMS\Core\Domain\ConsumableString;
 use TYPO3\CMS\Core\Page\PageRenderer;
-
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /***
  *
@@ -54,11 +55,11 @@ class CookiePanelController extends ActionController
         /** @var PageRenderer $pageRenderer */
         $pageRenderer = $this->pageRenderer;
         if(empty($this->settings['googleConsentModeV2']) === false) {
-            /** @var ConsumableString|null $nonce */
+            /** @var \TYPO3\CMS\Core\Security\ContentSecurityPolicy\ConsumableNonce|null $nonce */
             $nonceAttribute = $this->request->getAttribute('nonce');
             $nonce = '';
-            if ($nonceAttribute instanceof ConsumableString) {
-                $nonce = $nonceAttribute->consume();
+            if ($nonceAttribute instanceof ConsumableNonce) {
+                $nonce = $nonceAttribute->consumeInline();
             }
             $googleConsentModeV2DefaultValues = "
             <script nonce='".$nonce."'>
