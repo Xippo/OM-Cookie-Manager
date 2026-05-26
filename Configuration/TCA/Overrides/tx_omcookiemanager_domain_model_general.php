@@ -1,13 +1,17 @@
 <?php
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 $boot = static function () {
     $GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookie']['ctrl']['security']['ignorePageTypeRestriction'] = true;
     $GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookiegroup']['ctrl']['security']['ignorePageTypeRestriction'] = true;
     $GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookiepanel']['ctrl']['security']['ignorePageTypeRestriction'] = true;
     $GLOBALS['TCA']['tx_omcookiemanager_domain_model_cookiehtml']['ctrl']['security']['ignorePageTypeRestriction'] = true;
 
-    $versionInformation = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class);
+    $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    ExtensionManagementUtility::addTCAcolumns(
         'tx_omcookiemanager_domain_model_cookiegroup',
         [
             'gtm_consent_grps' => [

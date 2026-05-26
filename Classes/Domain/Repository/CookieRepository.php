@@ -1,6 +1,10 @@
 <?php
+
+declare(strict_types=1);
+
 namespace OM\OmCookieManager\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /***
  *
@@ -15,6 +19,6 @@ namespace OM\OmCookieManager\Domain\Repository;
 /**
  * The repository for Cookies
  */
-class CookieRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CookieRepository extends Repository
 {
 }

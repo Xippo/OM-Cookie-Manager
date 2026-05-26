@@ -1,8 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+
 return [
     'om_cookie_manager-plugin-main' => [
-        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        SvgIconProvider::class,
         'source' => 'EXT:om_cookie_manager/Resources/Public/Icons/Extension.svg',
     ],
 ];

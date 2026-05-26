@@ -1,6 +1,7 @@
 <?php
 namespace OM\OmCookieManager\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /***
  *
@@ -15,7 +16,7 @@ namespace OM\OmCookieManager\Domain\Model;
 /**
  * CookieHtml
  */
-class CookieHtml extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class CookieHtml extends AbstractEntity
 {
 
     /**

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace OM\OmCookieManager\Updates;
 
-use TYPO3\CMS\Install\Attribute\UpgradeWizard;
-use TYPO3\CMS\Install\Updates\AbstractListTypeToCTypeUpdate;
+use TYPO3\CMS\Core\Attribute\UpgradeWizard;
+use TYPO3\CMS\Core\Upgrades\AbstractListTypeToCTypeUpdate;
 
 #[UpgradeWizard('omOmCookieManagerCTypeMigration')]
 final class OMOmCookieManagerCTypeMigration extends AbstractListTypeToCTypeUpdate

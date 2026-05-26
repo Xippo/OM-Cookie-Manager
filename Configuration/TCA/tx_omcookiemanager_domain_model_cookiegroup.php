@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use OM\OmCookieManager\Tca\ItemsProcFunc\CookieItemsProcFunc;
 
 return [
@@ -9,7 +11,6 @@ return [
         'label_alt' => 'name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -20,7 +21,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name,description',
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_grp.svg'
     ],
     'types' => [
@@ -65,6 +65,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'hidden' => [
@@ -89,7 +90,8 @@ return [
                 'default' => 0,
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
-                ]
+                ],
+                'searchable' => false
             ],
         ],
         'endtime' => [
@@ -103,7 +105,8 @@ return [
                 ],
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
-                ]
+                ],
+                'searchable' => false
             ],
         ],
 
@@ -113,7 +116,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'searchable' => false
             ],
         ],
         'name' => [
@@ -132,7 +136,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,'
+                'eval' => 'trim,',
+                'searchable' => false
             ],
         ],
         'description' => [
@@ -201,6 +206,7 @@ return [
                 'rows' => 5,
                 'eval' => 'trim',
                 'placeholder' => 'keywordname,keywordname2',
+                'searchable' => false,
             ],
 
         ],

@@ -1,28 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use OM\OmCookieManager\Controller\CookiePanelController;
+use OM\OmCookieManager\Hook\ProcessDatamapClass;
+use OM\OmCookieManager\Hook\ProcessCmdmapClass;
+
 defined('TYPO3') || die();
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+ExtensionUtility::configurePlugin(
     'OmCookieManager',
     'Info',
     [
-        \OM\OmCookieManager\Controller\CookiePanelController::class => 'show',
+        CookiePanelController::class => 'show',
     ],
-    [],
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    []
 );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+ExtensionUtility::configurePlugin(
     'OmCookieManager',
     'Main',
     [
-        \OM\OmCookieManager\Controller\CookiePanelController::class => 'info',
+        CookiePanelController::class => 'info',
     ],
-    [],
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+    []
 );
 
 // hook registration
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = \OM\OmCookieManager\Hook\ProcessDatamapClass::class;
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][] = \OM\OmCookieManager\Hook\ProcessCmdmapClass::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][] = ProcessDatamapClass::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processCmdmapClass'][] = ProcessCmdmapClass::class;
 

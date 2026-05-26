@@ -1,6 +1,10 @@
 <?php
 namespace OM\OmCookieManager\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use OM\OmCookieManager\Domain\Model\TYPO3\CMS\Extbase\Annotation\Validate;
+use OM\OmCookieManager\Domain\Model\TYPO3\CMS\Extbase\Annotation\ORM\Cascade;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /***
  *
@@ -15,7 +19,7 @@ namespace OM\OmCookieManager\Domain\Model;
 /**
  * CookieGroup
  */
-class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class CookieGroup extends AbstractEntity
 {
 
     /**
@@ -30,7 +34,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var string
      */
-    #[TYPO3\CMS\Extbase\Annotation\Validate(['validator' => 'NotEmpty'])]
+    #[Validate(['validator' => 'NotEmpty'])]
     protected $name = '';
 
     /**
@@ -66,7 +70,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie>
      */
-    #[TYPO3\CMS\Extbase\Annotation\ORM\Cascade(['value' => 'remove'])]
+    #[Cascade(['value' => 'remove'])]
     protected $cookies = null;
 
     /**
@@ -103,7 +107,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->cookies = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->cookies = new ObjectStorage();
     }
 
     /**
@@ -206,7 +210,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\Cookie $cooky
      * @return void
      */
-    public function addCooky(\OM\OmCookieManager\Domain\Model\Cookie $cooky): void
+    public function addCooky(Cookie $cooky): void
     {
         $this->cookies->attach($cooky);
     }
@@ -217,7 +221,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \OM\OmCookieManager\Domain\Model\Cookie $cookyToRemove The Cookie to be removed
      * @return void
      */
-    public function removeCooky(\OM\OmCookieManager\Domain\Model\Cookie $cookyToRemove): void
+    public function removeCooky(Cookie $cookyToRemove): void
     {
         $this->cookies->detach($cookyToRemove);
     }
@@ -238,7 +242,7 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\OM\OmCookieManager\Domain\Model\Cookie> $cookies
      * @return void
      */
-    public function setCookies(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $cookies): void
+    public function setCookies(ObjectStorage $cookies): void
     {
         $this->cookies = $cookies;
     }
@@ -275,12 +279,12 @@ class CookieGroup extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->gtmConsentGrps = $gtmConsentGrps;
     }
 
-    public function getExistingCookies(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    public function getExistingCookies(): ?ObjectStorage
     {
         return $this->existingCookies;
     }
 
-    public function setExistingCookies(?\TYPO3\CMS\Extbase\Persistence\ObjectStorage $existingCookies): void
+    public function setExistingCookies(?ObjectStorage $existingCookies): void
     {
         $this->existingCookies = $existingCookies;
     }

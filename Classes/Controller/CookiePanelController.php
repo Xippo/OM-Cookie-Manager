@@ -2,11 +2,15 @@
 namespace OM\OmCookieManager\Controller;
 
 
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use OM\OmCookieManager\Domain\Repository\CookiePanelRepository;
+use OM\OmCookieManager\Domain\Repository\CookieGroupRepository;
+use Psr\Http\Message\ResponseInterface;
+use OM\OmCookieManager\Utility\JsBuilder;
 use OM\OmCookieManager\Domain\Model\CookieGroup;
 use OM\OmCookieManager\Domain\Model\CookiePanel;
 use TYPO3\CMS\Core\Domain\ConsumableString;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 
 /***
@@ -22,7 +26,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * CookiePanelController
  */
-class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class CookiePanelController extends ActionController
 {
 
     /**
@@ -32,7 +36,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      */
     protected $cookiePanelRepository = null;
 
-    public function __construct(\OM\OmCookieManager\Domain\Repository\CookiePanelRepository $cookiePanelRepository, \OM\OmCookieManager\Domain\Repository\CookieGroupRepository $cookieGroupRepository)
+    public function __construct(CookiePanelRepository $cookiePanelRepository, CookieGroupRepository $cookieGroupRepository, private readonly PageRenderer $pageRenderer)
     {
         $this->cookiePanelRepository = $cookiePanelRepository;
         $this->cookieGroupRepository = $cookieGroupRepository;
@@ -48,7 +52,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     public function initializeShowAction(): void
     {
         /** @var PageRenderer $pageRenderer */
-        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        $pageRenderer = $this->pageRenderer;
         if(empty($this->settings['googleConsentModeV2']) === false) {
             /** @var ConsumableString|null $nonce */
             $nonceAttribute = $this->request->getAttribute('nonce');
@@ -82,7 +86,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function showAction(): \Psr\Http\Message\ResponseInterface
+    public function showAction(): ResponseInterface
     {
         $allPanels = $this->cookiePanelRepository->findAll();
         if($allPanels->count() > 0){
@@ -105,27 +109,27 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
                 }
             }
             if(is_array($cookieGroups) && count($cookieGroups) > 0){
-                $grpJson = \OM\OmCookieManager\Utility\JsBuilder::buildCompleteGrpJson($cookieGroups, $this->request);
+                $grpJson = JsBuilder::buildCompleteGrpJson($cookieGroups, $this->request);
                 /** @var PageRenderer $pageRenderer */
-                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+                $pageRenderer = $this->pageRenderer;
                 $pageRenderer->addHeaderData('<script id="om-cookie-consent" type="application/json">'.$grpJson.'</script>');
             }
-            if (true === isset($cookieGroups)){
+            if (isset($cookieGroups)){
                 $this->view->assign('cookieGroups',$cookieGroups);
             }
             //check if panel should be suppressed
             if(false === empty($this->settings['dontShowOnPids'])){
                 $pageUid = $this->request->getAttribute('frontend.page.information')->getId();
-                $supressPIds = array_map('intval',explode(',',$this->settings['dontShowOnPids']));
-                if (true === in_array($pageUid, $supressPIds, true)){
+                $supressPIds = array_map(intval(...),explode(',',$this->settings['dontShowOnPids']));
+                if (in_array($pageUid, $supressPIds, true)){
                     $this->view->assign('suppressPanel',1);
                 }
             }
             //check links and set default if needed
-            if(true === empty($panel->getLink()) && false === empty($this->settings['privacyPolicyPid'])){
+            if(empty($panel->getLink()) && false === empty($this->settings['privacyPolicyPid'])){
                 $panel->setLink($this->settings['privacyPolicyPid']);
             }
-            if(true === empty($panel->getLinkLegalNotice()) && false === empty($this->settings['legalNoticePid'])){
+            if(empty($panel->getLinkLegalNotice()) && false === empty($this->settings['legalNoticePid'])){
                 $panel->setLinkLegalNotice($this->settings['legalNoticePid']);
             }
         }
@@ -135,7 +139,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function infoAction(): \Psr\Http\Message\ResponseInterface
+    public function infoAction(): ResponseInterface
     {
         $allPanels = $this->cookiePanelRepository->findAll();
 
@@ -152,7 +156,7 @@ class CookiePanelController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
                     $cookieGroups[] = $grp;
                 }
             }
-            if (true === isset($cookieGroups)){
+            if (isset($cookieGroups)){
                 $this->view->assign('cookieGroups',$cookieGroups);
             }
         }

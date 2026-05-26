@@ -13,11 +13,11 @@
 namespace OM\OmCookieManager\Utility;
 
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use OM\OmCookieManager\Domain\Model\Cookie;
 use OM\OmCookieManager\Domain\Model\CookieGroup;
 use OM\OmCookieManager\Domain\Model\CookieHtml;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Database\Query\Restriction\QueryRestrictionInterface;
 use TYPO3\CMS\Extbase\Mvc\RequestInterface;
 
 class JsBuilder
@@ -30,7 +30,7 @@ class JsBuilder
     public static function buildCompleteGrpJson($groups, RequestInterface $request)
     {
         $grpArray = [];
-        $fetchTsConstants = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'injectTsConstants');
+        $fetchTsConstants = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('om_cookie_manager', 'injectTsConstants');
         if((int)$fetchTsConstants === 1){
             /** @var \TYPO3\CMS\Core\TypoScript\FrontendTypoScript $typoscript */
             $typoscript = $request->getAttribute('frontend.typoscript');
@@ -80,7 +80,7 @@ class JsBuilder
                 $flatSetup = JsBuilder::$flatSetup;
                 // Replace {$CONST} if found in $this->flatSetup, else leave unchanged
                 return isset($flatSetup[$matches[1]]) && !is_array($flatSetup[$matches[1]]) ? $flatSetup[$matches[1]] : $matches[0];
-            }, $subject);
+            }, (string) $subject);
             if ($oldSubject == $subject) {
                 $noChange = true;
             }

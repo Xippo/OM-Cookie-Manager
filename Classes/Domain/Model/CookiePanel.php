@@ -1,6 +1,8 @@
 <?php
 namespace OM\OmCookieManager\Domain\Model;
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use OM\OmCookieManager\Domain\Model\TYPO3\CMS\Extbase\Annotation\Validate;
 
 /***
  *
@@ -15,7 +17,7 @@ namespace OM\OmCookieManager\Domain\Model;
 /**
  * CookiePanel
  */
-class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class CookiePanel extends AbstractEntity
 {
 
     /**
@@ -23,7 +25,7 @@ class CookiePanel extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var string
      */
-    #[TYPO3\CMS\Extbase\Annotation\Validate(['validator' => 'NotEmpty'])]
+    #[Validate(['validator' => 'NotEmpty'])]
     protected $name = '';
 
     /**

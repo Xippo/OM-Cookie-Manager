@@ -1,6 +1,7 @@
 <?php
 namespace OM\OmCookieManager\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /***
  *
@@ -15,7 +16,7 @@ namespace OM\OmCookieManager\Domain\Repository;
 /**
  * The repository for CookiePanels
  */
-class CookiePanelRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CookiePanelRepository extends Repository
 {
 
     public function initializeObject(): void {

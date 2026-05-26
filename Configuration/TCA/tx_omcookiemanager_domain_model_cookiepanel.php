@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel',
@@ -15,7 +18,6 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'name,description,link',
         'iconfile' => 'EXT:om_cookie_manager/Resources/Public/Icons/cookie_panel_icon.svg'
     ],
     'palettes' => [
@@ -30,7 +32,7 @@ return [
                     --palette--;;link_legal_notice, 
                     groups,
                     --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance, layout, position,
-                    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource,
+                    --div--;core.form.tabs:language, sys_language_uid, l10n_parent, l10n_diffsource,
                 ',
         ],
     ],
@@ -67,6 +69,7 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'max' => 255,
+                'searchable' => false,
             ],
         ],
         'hidden' => [
@@ -91,7 +94,8 @@ return [
                 'default' => 0,
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
-                ]
+                ],
+                'searchable' => false
             ],
         ],
         'endtime' => [
@@ -105,7 +109,8 @@ return [
                 ],
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
-                ]
+                ],
+                'searchable' => false
             ],
         ],
 
@@ -151,17 +156,17 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'searchable' => false
             ],
         ],
         'link_legal_notice' => [
             'exclude' => true,
             'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.link_legal_notice',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
+                'type' => 'link',
                 'size' => 30,
-                'eval' => 'trim'
+                'searchable' => false
             ],
         ],
         'link_legal_notice_text' => [
@@ -170,7 +175,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'searchable' => false
             ],
         ],
         'groups' => [

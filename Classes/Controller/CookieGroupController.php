@@ -1,6 +1,13 @@
 <?php
+
+declare(strict_types=1);
+
 namespace OM\OmCookieManager\Controller;
 
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use OM\OmCookieManager\Domain\Repository\CookieGroupRepository;
+use Psr\Http\Message\ResponseInterface;
+use OM\OmCookieManager\Domain\Model\CookieGroup;
 
 /***
  *
@@ -15,7 +22,7 @@ namespace OM\OmCookieManager\Controller;
 /**
  * CookieGroupController
  */
-class CookieGroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class CookieGroupController extends ActionController
 {
 
     /**
@@ -25,7 +32,7 @@ class CookieGroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      */
     protected $cookieGroupRepository = null;
 
-    public function __construct(\OM\OmCookieManager\Domain\Repository\CookieGroupRepository $cookieGroupRepository)
+    public function __construct(CookieGroupRepository $cookieGroupRepository)
     {
         $this->cookieGroupRepository = $cookieGroupRepository;
     }
@@ -35,7 +42,7 @@ class CookieGroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      * 
      * @return void
      */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
+    public function listAction(): ResponseInterface
     {
         $cookieGroups = $this->cookieGroupRepository->findAll();
         $this->view->assign('cookieGroups', $cookieGroups);
@@ -48,7 +55,7 @@ class CookieGroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
      * @param \OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup
      * @return void
      */
-    public function showAction(\OM\OmCookieManager\Domain\Model\CookieGroup $cookieGroup): \Psr\Http\Message\ResponseInterface
+    public function showAction(CookieGroup $cookieGroup): ResponseInterface
     {
         $this->view->assign('cookieGroup', $cookieGroup);
         return $this->htmlResponse();
