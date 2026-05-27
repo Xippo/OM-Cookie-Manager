@@ -158,8 +158,7 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiepanel.link_legal_notice',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
+                'type' => 'link',
                 'size' => 30,
                 'eval' => 'trim'
             ],
