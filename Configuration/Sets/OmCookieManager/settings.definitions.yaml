@@ -1,50 +1,65 @@
+categories:
+  tx_omcookiemanager_main:
+    label: 'EXT:OM Cookie Manager'
+
 settings:
+
   plugin.tx_omcookiemanager_main.view.templateRootPath:
     label: 'Path to template root (FE)'
     type: string
     default: 'EXT:om_cookie_manager/Resources/Private/Templates/'
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.view.partialRootPath:
     label: 'Path to template partials (FE)'
     type: string
     default: 'EXT:om_cookie_manager/Resources/Private/Partials/'
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.view.layoutRootPath:
     label: 'Path to template layouts (FE)'
     type: string
     default: 'EXT:om_cookie_manager/Resources/Private/Layouts/'
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.settings.googleConsentModeV2:
     label: 'Include Google Consent Mode V2 Default values (ad_storage, ad_user_data, ad_personalization, analytics_storage as denied)'
     type: bool
     default: true
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.settings.cssFile:
     label: 'Main CSS File'
     type: string
     default: 'EXT:om_cookie_manager/Resources/Public/Css/cookie_panel.css'
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.settings.jsFile:
     label: 'Main JS File'
     type: string
     default: 'EXT:om_cookie_manager/Resources/Public/Js/om_cookie_main.js'
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.settings.dontShowOnPids:
     label: 'Comma-separated PIDs where the panel does not show automatically (e.g. privacy policy, legal notice)'
     type: string
     default: ''
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.settings.legalNoticePid:
     label: 'PID of legal notice page (fallback link in panel)'
     type: string
     default: ''
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.settings.privacyPolicyPid:
     label: 'PID of privacy policy page (fallback link in panel)'
     type: string
     default: ''
+    category: tx_omcookiemanager_main
 
   plugin.tx_omcookiemanager_main.persistence.storagePid:
     label: 'Default storage PID for cookie records'
     type: string
     default: ''
+    category: tx_omcookiemanager_main
