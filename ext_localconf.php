@@ -15,7 +15,8 @@ ExtensionUtility::configurePlugin(
     [
         CookiePanelController::class => 'show',
     ],
-    []
+    [],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 ExtensionUtility::configurePlugin(
@@ -24,7 +25,8 @@ ExtensionUtility::configurePlugin(
     [
         CookiePanelController::class => 'info',
     ],
-    []
+    [],
+    ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
 // hook registration
