@@ -10,8 +10,8 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - Cookie Information Table plugin
 - Optin Panel, which loads the scripts only after the optin confirmation
 - Google Tag Manager support.
-- Customizable, use your own CSS or change the Fluid templates
-- Custom javascript events that can be lised
+- Customizable. Use your own CSS or change the Fluid templates
+- Custom javascript events that can be listened to
 
 ## Changelog
 **9.1.0**
@@ -74,6 +74,11 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
 - [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
 - [TASK] Update of the TCA for improved user guidance in the backend.
+**14.0.0**
+- [TASK] Compatibility TYPO3 v14: implement site sets, adopt settings.definitions.yaml, and use new CSP object.
+- [TASK] Implement nonce passing on.
+- [CLEANUP] Make extension scanner happy.
+- [TASK] Add Tailor-based TER publishing workflow.
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
