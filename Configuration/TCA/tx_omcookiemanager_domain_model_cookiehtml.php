@@ -118,7 +118,7 @@ return [
             'label' => 'LLL:EXT:om_cookie_manager/Resources/Private/Language/locallang_db.xlf:tx_omcookiemanager_domain_model_cookiehtml.html',
             'config' => [
                 'type' => 'text',
-                'renderType' => 't3editor',
+                'renderType' => 'codeEditor',
                 'format' => 'html',
                 'eval' => 'trim'
             ]
@@ -143,6 +143,6 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-    
+
     ],
 ];
