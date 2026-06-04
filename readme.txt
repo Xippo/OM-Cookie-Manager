@@ -14,57 +14,13 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - Custom javascript events that can be listened to
 
 ## Changelog
-**9.1.0**
-- Composer support
-- New Group awareness. If the panel finds a new group(with a new ID) it will show up again.
-- Improved multilanguage support
-**9.2.0**
-- (Sponsored by Gesellschaft für Informatik - gi.de) TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache.
-**9.2.1**
-- Bugfix shortening details_nr for writelog method (thx to bashte and Sebastian Richter)
-**10.0.0**
-- Add TYPO3 10 support
-- Improved remember abilities between languages. Know also if your groups are not linked (over the field Transl.Orig) inside the TYPO3 backend, the extension will remember all active groups and not show the panel on every language switch on the frontend side.
-**10.0.1**
-- BUGFIX if no css or js file is set in the TypoScript Constants no empty file will be added to the page.
-**10.0.2**
-- [BUGFIX] Fix failing TS constants replacement in HTML. Thanks, @maritwho(Sebastian Hofer)
-**11.0.0**
-- [TASK] TYPO3 11 compatibility (Thx Christoph Dolar)
-- [TASK] Improve default CSS for better OS and iOS experience
-**11.0.1**
-- [BUGFIX] W3C HTML Validation
-- [TASK] TYPO3 12 Compatibility preparation (Thx Sebastian Richter and DerBasti)
-**12.0.0**
-- [TASK] Establish TYPO3 12 compatibility for typoscript constants swap
-- [BUGFIX] PHP Warning: Undefined variable and fix extension scanner false positives
-- [TASK] TYPO3 12 compatibility
-**12.0.1**
-- [TASK] improve TYPO3 12 compatibility, remove obsolete configurations and replace outdated API calls (Thx Nikita)
-**12.1.0**
-- [FEATURE] add native support for google consent mode V2. More setup information can be found inside the docu on my site (development sponsored by web-crossing.com, nerdost.net and smaller donations)
-**12.1.1**
-- [Compatibility] improve TCA compatibility. Thanks to dbtisch-no for contribution
-- [Compatibility] improve compatibility with CSP. Thanks to Michael Grundkötter for contribution
-**12.2.0**
-- [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
-- [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
-- [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
-**12.3.0**
-- [FEATURE] Added internal titles for Cookie, CookieGroup, and CookieHtml to facilitate management in the backend for multi-site instances.
-- [FEATURE] New positioning options for the cookie panel: Choose between Standard (fixed at the bottom) and Centered.
-- [FEATURE] New layout system for the cookie panel: Choose between standard view or a new tab-based view (consent, details).
-- [FEATURE] Support for keywords in cookie groups. Allows script tags to be loaded via the attribute. `data-consent-keyword`. (e.g. `<script type='text/example' data-consent-keyword='keywordname' />`)
-- [FEATURE] Accessibility improvements: Added WAI-ARIA support (roles, modal, labels) and improved focus management for the cookie panel.
-- [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
-- [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
-- [TASK] Update of the TCA for improved user guidance in the backend.
-**13.0.0**
-- [TASK] TYPO3 13 compatibility. Thanks to Mohsin Kahn for the big contribution.
-**13.1.0**
-- [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
-- [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
-- [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
+**14.0.1**
+- [BUGFIX] Remove keys in German DB translation file so default language (EN) will be used as tab header in backend.
+**14.0.0**
+- [TASK] Compatibility TYPO3 v14: implement site sets, adopt settings.definitions.yaml, and use new CSP object.
+- [TASK] Implement nonce passing on.
+- [CLEANUP] Make extension scanner happy.
+- [TASK] Add Tailor-based TER publishing workflow.
 **13.2.0**
 - [FEATURE] Added internal titles for Cookie, CookieGroup, and CookieHtml to facilitate management in the backend for multi-site instances.
 - [FEATURE] New positioning options for the cookie panel: Choose between Standard (fixed at the bottom) and Centered.
@@ -74,11 +30,57 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
 - [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
 - [TASK] Update of the TCA for improved user guidance in the backend.
-**14.0.0**
-- [TASK] Compatibility TYPO3 v14: implement site sets, adopt settings.definitions.yaml, and use new CSP object.
-- [TASK] Implement nonce passing on.
-- [CLEANUP] Make extension scanner happy.
-- [TASK] Add Tailor-based TER publishing workflow.
+**13.1.0**
+- [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
+- [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
+- [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
+**13.0.0**
+- [TASK] TYPO3 13 compatibility. Thanks to Mohsin Kahn for the big contribution.
+**12.3.0**
+- [FEATURE] Added internal titles for Cookie, CookieGroup, and CookieHtml to facilitate management in the backend for multi-site instances.
+- [FEATURE] New positioning options for the cookie panel: Choose between Standard (fixed at the bottom) and Centered.
+- [FEATURE] New layout system for the cookie panel: Choose between standard view or a new tab-based view (consent, details).
+- [FEATURE] Support for keywords in cookie groups. Allows script tags to be loaded via the attribute. `data-consent-keyword`. (e.g. `<script type='text/example' data-consent-keyword='keywordname' />`)
+- [FEATURE] Accessibility improvements: Added WAI-ARIA support (roles, modal, labels) and improved focus management for the cookie panel.
+- [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
+- [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
+- [TASK] Update of the TCA for improved user guidance in the backend.
+**12.2.0**
+- [FEATURE] Allow to suppress popup of the panel for specific pids over typoscript constants setting. (Sponsored by Gesellschaft für Informatik - gi.de)
+- [FEATURE] Allow to set to specific links for legal notice and privacy policy inside the panel. Default Link targets can be set also over TypoScript constants settings (Sponsored by Gesellschaft für Informatik - gi.de)
+- [TASK] Change default color of "accept all" button for better contrast to match WACG requirements 4.5
+**12.1.1**
+- [Compatibility] improve TCA compatibility. Thanks to dbtisch-no for contribution
+- [Compatibility] improve compatibility with CSP. Thanks to Michael Grundkötter for contribution
+**12.1.0**
+- [FEATURE] add native support for google consent mode V2. More setup information can be found inside the docu on my site (development sponsored by web-crossing.com, nerdost.net and smaller donations)
+**12.0.1**
+- [TASK] improve TYPO3 12 compatibility, remove obsolete configurations and replace outdated API calls (Thx Nikita)
+**12.0.0**
+- [TASK] Establish TYPO3 12 compatibility for typoscript constants swap
+- [BUGFIX] PHP Warning: Undefined variable and fix extension scanner false positives
+- [TASK] TYPO3 12 compatibility
+**11.0.1**
+- [BUGFIX] W3C HTML Validation
+- [TASK] TYPO3 12 Compatibility preparation (Thx Sebastian Richter and DerBasti)
+**11.0.0**
+- [TASK] TYPO3 11 compatibility (Thx Christoph Dolar)
+- [TASK] Improve default CSS for better OS and iOS experience
+**10.0.2**
+- [BUGFIX] Fix failing TS constants replacement in HTML. Thanks, @maritwho(Sebastian Hofer)
+**10.0.1**
+- BUGFIX if no css or js file is set in the TypoScript Constants no empty file will be added to the page.
+**10.0.0**
+- Add TYPO3 10 support
+- Improved remember abilities between languages. Know also if your groups are not linked (over the field Transl.Orig) inside the TYPO3 backend, the extension will remember all active groups and not show the panel on every language switch on the frontend side.
+**9.2.1**
+- Bugfix shortening details_nr for writelog method (thx to bashte and Sebastian Richter)
+**9.2.0**
+- (Sponsored by Gesellschaft für Informatik - gi.de) TypoScript Constant processing inside the cookie HTML field(default:disabled). It must be enabled inside the Extension Settings after that you should clear the system cache.
+**9.1.0**
+- Composer support
+- New Group awareness. If the panel finds a new group(with a new ID) it will show up again.
+- Improved multilanguage support
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
