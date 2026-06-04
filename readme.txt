@@ -15,7 +15,7 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 
 ## Changelog
 **14.0.1**
-- [BUGFIX] Remove keys in German DB translation file so default language (EN) will be used as tab header in backend.
+- [BUGFIX] Remove keys in German DB translation file. So tab header inside cookie groups use default language (EN).
 **14.0.0**
 - [TASK] Compatibility TYPO3 v14: implement site sets, adopt settings.definitions.yaml, and use new CSP object.
 - [TASK] Implement nonce passing on.
