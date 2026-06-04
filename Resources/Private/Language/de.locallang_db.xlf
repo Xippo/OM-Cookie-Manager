@@ -39,12 +39,6 @@
 				<source>Cookie Group</source>
 				<target>Cookie Gruppe</target>
 			</trans-unit>
-			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.tab.cookies" resname="tx_omcookiemanager_domain_model_cookiegroup.tab.cookies">
-				<source>Cookies</source>
-			</trans-unit>
-			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.tab.google" resname="tx_omcookiemanager_domain_model_cookiegroup.tab.google">
-				<source>Google (GTM)</source>
-			</trans-unit>
 			<trans-unit id="tx_omcookiemanager_domain_model_cookiegroup.name" resname="tx_omcookiemanager_domain_model_cookiegroup.name">
 				<source>Name</source>
 				<target>Name</target>
