@@ -154,7 +154,7 @@ var pushGtmEvents = function (events) {
 
 var omPushGtmConsentModeGrpsEvents = function (groups) {
     let groupsObject = {};
-    if (typeof groups === 'undefined') {
+    if (typeof groups !== 'undefined') {
         groups.forEach((value) => {
             groupsObject[value] = 'granted';
         });
