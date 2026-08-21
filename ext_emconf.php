@@ -14,5 +14,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Oliver Pfaff',
     'author_email' => 'info@olli-machts.de',
     'state' => 'stable',
-    'version' => '14.0.1',
+    'version' => '14.0.2',
 ];
