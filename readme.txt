@@ -74,6 +74,8 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - [TASK] Expansion of language files to include translations for the new tab layout and fallback descriptions.
 - [TASK] Adjustment of CSS and JavaScript to support the new layouts and positions.
 - [TASK] Update of the TCA for improved user guidance in the backend.
+**13.2.1**
+- [BUGFIX] Wrong undefined check blocked the Google Consent Mode v2 update. Sorry about that.
 Icons used in the extension. Visible only in the backend.
 Icons made by Smashicons from www.flaticon.com
 Icons made by Freepik from www.flaticon.com
