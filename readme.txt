@@ -14,6 +14,8 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - Custom javascript events that can be listened to
 
 ## Changelog
+**14.0.2**
+- [BUGFIX] Wrong undefined check blocked the Google Consent Mode v2 update. Sorry about that.
 **14.0.1**
 - [BUGFIX] Remove keys in German DB translation file. So tab header inside cookie groups use default language (EN).
 **14.0.0**
