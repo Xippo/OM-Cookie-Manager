@@ -14,6 +14,8 @@ The Extension development and maintenance is sponsored by Nerdost GmbH (www.nerd
 - Custom javascript events that can be listened to
 
 ## Changelog
+**14.0.3**
+- [TASK] Publish new tag to fulfill packagist immutable release policy
 **14.0.2**
 - [BUGFIX] Wrong undefined check blocked the Google Consent Mode v2 update. Sorry about that.
 **14.0.1**
