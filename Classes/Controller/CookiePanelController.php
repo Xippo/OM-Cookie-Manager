@@ -109,7 +109,7 @@ class CookiePanelController extends ActionController
                     }
                 }
             }
-            if(is_array($cookieGroups) && count($cookieGroups) > 0){
+            if(isset($cookieGroups) && is_array($cookieGroups) && count($cookieGroups) > 0){
                 $grpJson = JsBuilder::buildCompleteGrpJson($cookieGroups, $this->request);
                 /** @var PageRenderer $pageRenderer */
                 $pageRenderer = $this->pageRenderer;
